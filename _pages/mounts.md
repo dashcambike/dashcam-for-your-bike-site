@@ -24,7 +24,7 @@ It may not be compatible with Popsockets (we haven't tested that yet!).
 
 If our recommended option isn't the right fit for you, we have tested several others as well.
 No one mount does everything, so decide what you care about most.
-If you find a mount that does everything, please get in touch! Email us at dashcam@arminsamii.com.
+If you find a mount that does everything, please get in touch! Email us at hello@dashcam.bike.
 
 <table style="text-align:center">
     <colgroup>
