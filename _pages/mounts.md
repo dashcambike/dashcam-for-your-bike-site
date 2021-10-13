@@ -12,13 +12,19 @@ The app is compatible with any phone mount, but some are better than others.
 
 # Our Top Pick
 
-<a href="https://www.amazon.com/visnfa-Adjustable-Universal-Accessories-Smartphones/dp/B08TWMZFR8/ref=as_li_ss_il?pd_rd_w=kzQ1l&pf_rd_p=eb19c5b7-e15e-4646-8a38-bda700402de6&pf_rd_r=6EYMBHBWZVW24GQWWEYY&pd_rd_r=5118b3e4-0d36-416a-8c41-8a02c7c0418a&pd_rd_wg=iuvZV&pd_rd_i=B08TWMZFR8&psc=1&linkCode=li3&tag=robotarmin0c-20&linkId=7344cf273e315a2a4bd545f0cb0e3057&language=en_US" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08TWMZFR8&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=robotarmin0c-20&language=en_US" ></a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=robotarmin0c-20&language=en_US&l=li3&o=1&a=B08TWMZFR8" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+<a href="https://www.amazon.com/gp/product/B079Z1CH9B/ref=as_li_ss_il?ie=UTF8&psc=1&linkCode=li3&tag=robotarmin0c-20&linkId=d3b488df028cb3f0f7c5f76378b37deb&language=en_US" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B079Z1CH9B&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=robotarmin0c-20&language=en_US" ></a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=robotarmin0c-20&language=en_US&l=li3&o=1&a=B079Z1CH9B" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 
-This mount is the cheapest option we tested.
-It tilts up and down so you can look at your screen, then face it back outward to record.
-It won't block any of your iPhone's cameras, and the side grips are low so they won't push your volume buttons either.
-It installs quickly, without any tools.
-It may not be compatible with Popsockets (we haven't tested that yet!).
+The ball mount makes it easy to tilt up and down so you can look at your screen to check maps or Strava, then face it back outward to record.
+
+The biggest issue we found is that on some road bikes and bumpy roads in portrait (vertical) mode, it can slip down and push on the volume-down button.
+To get around this, we recommend shooting in landscape (horizontally).
+
+It is stable without the fourth strap, which blocks the camera - so we recommend not using the fourth strap to leave the camera clear (at your own risk - we're not making promises here!).
+It can easily rotate to be horizontal and vertical, and installs quickly which makes it easy to move it between bikes.
+
+It also works nicely on both road and mountain bike handlebars, whereas some of the other mounts are hard to position nicely on road bikes.
+All mounts we tested work nicely on mountain bike handlebars.
+
 
 # Additional Reviews
 
@@ -58,6 +64,16 @@ If you find a mount that does everything, please get in touch! Email us at hello
         <td>
             <a href="https://www.amazon.com/gp/product/B079Z1CH9B/ref=as_li_ss_il?ie=UTF8&psc=1&linkCode=li2&tag=robotarmin0c-20&linkId=0d6c505ada2eb40ca9dfab1d2ce5417a&language=en_US" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B079Z1CH9B&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=robotarmin0c-20&language=en_US" >Our Top Pick</a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=robotarmin0c-20&language=en_US&l=li2&o=1&a=B079Z1CH9B" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
         </td>
+        <td>$15</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>❌</td>
+        <td>✅</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="https://www.amazon.com/visnfa-Adjustable-Universal-Accessories-Smartphones/dp/B08TWMZFR8/ref=as_li_ss_il?pd_rd_w=kzQ1l&pf_rd_p=eb19c5b7-e15e-4646-8a38-bda700402de6&pf_rd_r=6EYMBHBWZVW24GQWWEYY&pd_rd_r=5118b3e4-0d36-416a-8c41-8a02c7c0418a&pd_rd_wg=iuvZV&pd_rd_i=B08TWMZFR8&psc=1&linkCode=li2&tag=robotarmin0c-20&linkId=1cf4b86caeeaf81d0505d572fa8bb8d4&language=en_US" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08TWMZFR8&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=robotarmin0c-20&language=en_US" >Our Second Choice</a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=robotarmin0c-20&language=en_US&l=li2&o=1&a=B08TWMZFR8" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+        </td>
         <td>$13</td>
         <td>✅</td>
         <td>✅</td>
@@ -96,15 +112,8 @@ If you find a mount that does everything, please get in touch! Email us at hello
         <td>✅</td>
         <td>✅</td>
     </tr>
-    <tr>
-        <td>
-            <a href="https://www.amazon.com/gp/product/B079Z1CH9B/ref=as_li_ss_il?ie=UTF8&psc=1&linkCode=li2&tag=robotarmin0c-20&linkId=0d6c505ada2eb40ca9dfab1d2ce5417a&language=en_US" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B079Z1CH9B&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=robotarmin0c-20&language=en_US" >Quick Mount</a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=robotarmin0c-20&language=en_US&l=li2&o=1&a=B079Z1CH9B" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-        </td>
-        <td>$15</td>
-        <td>✅</td>
-        <td>❌</td>
-        <td>❌</td>
-        <td>✅</td>
-    </tr>
   </tbody>
 </table>
+
+# Notes
+As an Amazon Associate I earn from qualifying purchases.
