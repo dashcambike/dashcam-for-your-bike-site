@@ -13,7 +13,7 @@ presskit_download_link                    :                                     
 app_icon                                  : ./assets/icon.png                           # Automatically populates if not set and if iOS app ID is set.  Otherwise enter path to icon file manually.
 app_name                                  :                                           # Automatically populates if not set and if iOS app ID is set.  Otherwise enter manually.
 app_price                                 :                                           # Automatically populates if not set and if iOS app ID is set.  Otherwise enter manually.
-app_description                           : Dashcam for your Bike
+app_description                           : Low-power camera to record your rides and share dangerous moments.
 
 enable_smart_app_banner                   : true                                      # Set to true to show a smart app banner at top of page on mobile devices.
 
@@ -41,11 +41,15 @@ Features of the app:
   - title                                 : Super-low-power
     description                           : a fraction of the battery usage of dashcams used by drivers
     fontawesome_icon_name                 : magic
-    
+
   - title                                 : Gesture-based controls
     description                           : Start and stop recording without looking at your phone
     fontawesome_icon_name                 : mobile
 
+  - title                                 : Play music while you record
+    description                           : Choose between recording audio or playing music
+    fontawesome_icon_name                 : 
+    
   - title                                 : Records GPS tracks
     description                           : Tap anywhere on a track to see video from that moment.
     fontawesome_icon_name                 : play-circle
@@ -130,3 +134,4 @@ collections:
 
 # Markdown rendering
 markdown: kramdown
+google_analytics: G-FYFE0DB37S
