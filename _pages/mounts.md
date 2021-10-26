@@ -96,7 +96,7 @@ If you find a mount that does everything, please get in touch! Email us at hello
             <a href="https://www.amazon.com/PopSockets-PopMount-Ride-Scooter-Bicycle/dp/B08P4XJVPL/ref=as_li_ss_il?dchild=1&keywords=pop+mount+2+bike&qid=1633807572&sr=8-1&linkCode=li2&tag=robotarmin0c-20&linkId=687a8bac46954f6a2c12754cb694a5f3&language=en_US" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08P4XJVPL&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=robotarmin0c-20&language=en_US" >PopMount 2 Ride</a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=robotarmin0c-20&language=en_US&l=li2&o=1&a=B08P4XJVPL" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
             
         </td>
-        <td>$30</td>
+        <td>$25</td>
         <td>✅</td>
         <td>❌</td>
         <td>✅</td>
@@ -114,6 +114,15 @@ If you find a mount that does everything, please get in touch! Email us at hello
     </tr>
   </tbody>
 </table>
+
+# How to use the mounts
+
+I personally use the All-Metal Mount since I don't mind not being able to tilt to see the screen. It feels like the most sturdy.
+
+The Chest Mount is convenient because it requires no mount, but it has a lot of downsides: the videos are very bouncy, it's hard to aim the camera correctly, and you get really sweaty under the chest straps. I don't recommend it unless you truly can't use a mounted option.
+
+The PopMount 2 Ride is most convenient for PopSocket users, but the strap blocks the camera. One way to get around that problem is to pull the strap even further until you hang the phone on the secod hook, which gets you a video that [looks like this](https://twitter.com/DashcamBike/status/1448636353948880900?s=20).
+
 
 # Notes
 As an Amazon Associate I earn from qualifying purchases.
