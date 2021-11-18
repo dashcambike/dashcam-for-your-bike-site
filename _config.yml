@@ -25,8 +25,8 @@ your_link                                 : https://arminsamii.com
 your_city                                 : Pittsburgh, PA
 email_address                             : hello@dashcam.bike
 facebook_username                         : 
-instagram_username                        : 
-twitter_username                          :
+instagram_username                        : DashcamBike
+twitter_username                          : DashcamBike
 github_username                           : 
 youtube_username                          :
 
@@ -47,7 +47,7 @@ Features of the app:
     fontawesome_icon_name                 : mobile
 
   - title                                 : Play music while you record
-    description                           : Choose between recording audio or playing music
+    description                           : Records via bluetooth or your phone speakers
     fontawesome_icon_name                 : 
     
   - title                                 : Records GPS tracks
