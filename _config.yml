@@ -136,5 +136,7 @@ collections:
 markdown: kramdown
 google_analytics: G-FYFE0DB37S
 
+url: "https://dashcam.bike" # the base hostname & protocol for your site for jekyll-sitemap
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
