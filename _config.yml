@@ -135,3 +135,6 @@ collections:
 # Markdown rendering
 markdown: kramdown
 google_analytics: G-FYFE0DB37S
+
+plugins:
+  - jekyll-seo-tag
