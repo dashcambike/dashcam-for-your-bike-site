@@ -34,41 +34,41 @@ youtube_username                          :
 
 # Feature List                            Edit, add or remove features to be presented.
 features                                  :
-
-Features of the app:
-- 
-- 
-  - title                                 : Super-low-power
-    description                           : a fraction of the battery usage of dashcams used by drivers
-    fontawesome_icon_name                 : magic
+  - title                                 : Super low-power
+    description                           : A fraction of the battery usage of dashcams used by drivers
+    fontawesome_icon_name                 : battery-full
 
   - title                                 : Gesture-based controls
     description                           : Start and stop recording without looking at your phone
-    fontawesome_icon_name                 : mobile
+    fontawesome_icon_name                 : map-marked
 
   - title                                 : Play music while you record
     description                           : Records via bluetooth or your phone speakers
-    fontawesome_icon_name                 : 
+    fontawesome_icon_name                 : music
     
   - title                                 : Records GPS tracks
     description                           : Tap anywhere on a track to see video from that moment.
-    fontawesome_icon_name                 : play-circle
+    fontawesome_icon_name                 : map-marker-alt
 
   - title                                 : Fast playback
-    description                           : Up to 8x normal speed
-    fontawesome_icon_name                 : adjust
+    description                           : Up to 8x speed
+    fontawesome_icon_name                 : fast-forward
 
   - title                                 : Easy Exporting
     description                           : Share to social media, or save videos to your phone
-    fontawesome_icon_name                 : link
+    fontawesome_icon_name                 : share-alt
   
   - title                                 : Smart Storage
     description                           : Automatically deletes oldest videos to save storage space
-    fontawesome_icon_name                 : star
+    fontawesome_icon_name                 : save
 
-  - title                                 : Social Links
-    description                           : Easily add social media accounts and contact info in the footer via the _config.yml file. No HTML/CSS needed.
-    fontawesome_icon_name                 : 
+  - title                                 : Fast 311 Reports
+    description                           : Share dangerous conditions with your city with a couple taps
+    fontawesome_icon_name                 : flag
+
+  - title                                 : Video Editing
+    description                           : Simple video trimming features to just share the relevant moment
+    fontawesome_icon_name                 : video
 
 
 # Theme Settings
@@ -90,8 +90,8 @@ app_title_color                           : "#ffffff"
 app_price_color                           : "#ffffff"
 app_description_color                     : "#ffffff"
 
-feature_title_color                       : "#000000"
-feature_text_color                        : "#666666"
+feature_title_color                       : "#ffffff"
+feature_text_color                        : "#cfcfcf"
 
 feature_icons_foreground_color            : "#1d63ea"
 feature_icons_background_color            : "#e6e6e6"
