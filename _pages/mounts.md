@@ -26,17 +26,15 @@ There is a button in the back that locks the mount in place, which makes it hard
 * **Easy Installation**: All our mounts are easy to install. Some require no tools, others require just a hex key.
 * **Doesn't block camera**: The app always records with the widest-angle lens you have, so make sure the mount doesn't block that camera.
 
-## Alternative #1: A Sturdy and Durable Mount
+## Alternative #1: A Quicker-Release Mount
 
 <a href="https://www.amazon.com/visnfa-Adjustable-Universal-Accessories-Smartphones/dp/B08TWMZFR8?pd_rd_w=kzQ1l&pf_rd_p=eb19c5b7-e15e-4646-8a38-bda700402de6&pf_rd_r=6EYMBHBWZVW24GQWWEYY&pd_rd_r=5118b3e4-0d36-416a-8c41-8a02c7c0418a&pd_rd_wg=iuvZV&pd_rd_i=B08TWMZFR8&th=1&linkCode=li3&tag=robotarmin0c-20&linkId=707783e7e947601bf7035bff7f744920&language=en_US&ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08TWMZFR8&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=robotarmin0c-20&language=en_US" ><br/>Buy on Amazon</a>
 
-The spherical connector makes it easy to tilt up and down so you can look at your screen to check maps or Strava, then face it back outward to record.
+This mount has slightly more limited motion than our top pick, but in exchange it's faster to get your phone in and out of the mount - meaning you can easily remove the phone while riding.
 
 It can easily rotate to be horizontal and vertical, and installs quickly which makes it easy to move it between bikes.
 
-It's very fast to put your phone in and out of - no straps to deal with.
-
-Our biggest issue with this mount is that it doesn't have as wide of a range of motion as Our Top Pick, so you might get a little more of your handlebar obstructing the camera. It also doesn't fit around extremely thick handlebars.
+The biggest downside is that your footage is more likely to have obstructions from your handlebars with this mount, and doesn't work well in landscape (horizontal) mode since too much of the handlebars will obstruct the camera.
 
 
 ## Alternative #2: All-Metal Mount
