@@ -12,13 +12,13 @@ The app is compatible with any phone mount that doesn't block the camera. Here a
 
 # Our Top Pick
 
-<a href="https://www.amazon.com/visnfa-Adjustable-Universal-Accessories-Smartphones/dp/B08TWMZFR8?pd_rd_w=kzQ1l&pf_rd_p=eb19c5b7-e15e-4646-8a38-bda700402de6&pf_rd_r=6EYMBHBWZVW24GQWWEYY&pd_rd_r=5118b3e4-0d36-416a-8c41-8a02c7c0418a&pd_rd_wg=iuvZV&pd_rd_i=B08TWMZFR8&th=1&linkCode=li3&tag=robotarmin0c-20&linkId=707783e7e947601bf7035bff7f744920&language=en_US&ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08TWMZFR8&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=robotarmin0c-20&language=en_US" ><br/>Buy on Amazon</a>
+<a href="https://www.amazon.com/gp/product/B08R93X4F6?ie=UTF8&psc=1&linkCode=li3&tag=robotarmin0c-20&linkId=62f93bdc23fd843e23f3fea89f85b9c0&language=en_US&ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08R93X4F6&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=robotarmin0c-20&language=en_US" ><br/>Buy on Amazon</a>
 
-The spherical connector makes it easy to tilt up and down so you can look at your screen to check maps or Strava, then face it back outward to record.
+This mount has a ton of metal components which make it feel very sturdy.
+It attaches at two corners, which reduces vibration in the dashcam footage.
+The ball mount gives a wide range of rotation, so you can rotate down to avoid getting your handlebars in the shot, then tilt up to look at your Maps App.
 
-It can easily rotate to be horizontal and vertical, and installs quickly which makes it easy to move it between bikes.
-
-It's very fast to put your phone in and out of - no straps to deal with.
+There is a button in the back that locks the mount in place, which makes it hard to take out of the mount while riding. The button can get a little stiff in very cold weather, but it hasn't bothered us yet.
 
 # What's important in a mount?
 
@@ -27,15 +27,16 @@ It's very fast to put your phone in and out of - no straps to deal with.
 * **Doesn't block camera**: The app always records with the widest-angle lens you have, so make sure the mount doesn't block that camera.
 
 ## Alternative #1: A Sturdy and Durable Mount
-<a href="https://www.amazon.com/gp/product/B08R93X4F6?ie=UTF8&psc=1&linkCode=li3&tag=robotarmin0c-20&linkId=62f93bdc23fd843e23f3fea89f85b9c0&language=en_US&ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08R93X4F6&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=robotarmin0c-20&language=en_US" ><br/>Buy on Amazon</a>
 
-We really like this mount. It blocks the center camera on an iPhone 12 Pro just a touch, but not enough to make us worried.
-It has a button in the back that locks the mount in place, and it's quite sturdy.
-It attaches at two corners, which reduces vibration in the dashcam footage.
-The ball mount also gives a wider range of rotation, so you can record from lower angles than our top pick.
+<a href="https://www.amazon.com/visnfa-Adjustable-Universal-Accessories-Smartphones/dp/B08TWMZFR8?pd_rd_w=kzQ1l&pf_rd_p=eb19c5b7-e15e-4646-8a38-bda700402de6&pf_rd_r=6EYMBHBWZVW24GQWWEYY&pd_rd_r=5118b3e4-0d36-416a-8c41-8a02c7c0418a&pd_rd_wg=iuvZV&pd_rd_i=B08TWMZFR8&th=1&linkCode=li3&tag=robotarmin0c-20&linkId=707783e7e947601bf7035bff7f744920&language=en_US&ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08TWMZFR8&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=robotarmin0c-20&language=en_US" ><br/>Buy on Amazon</a>
 
-The biggest downside is that it's a little more cumbersome to lock your phone in place: the button in the back is hard to click, taking a couple seconds longer than our top pick to lock it in. That means it's hard to take your phone out while riding (if, say, you want to record behind you).
+The spherical connector makes it easy to tilt up and down so you can look at your screen to check maps or Strava, then face it back outward to record.
 
+It can easily rotate to be horizontal and vertical, and installs quickly which makes it easy to move it between bikes.
+
+It's very fast to put your phone in and out of - no straps to deal with.
+
+Our biggest issue with this mount is that it doesn't have as wide of a range of motion as Our Top Pick, so you might get a little more of your handlebar obstructing the camera. It also doesn't fit around extremely thick handlebars.
 
 
 ## Alternative #2: All-Metal Mount
@@ -45,6 +46,9 @@ While none of these mounts have broken on us, we have used a plastic mount that 
 If you're afraid of plastic components, consider this All-Metal Mount.
 The downside: **this mount does not swivel**, meaning you cannot tilt it to view Google Maps.
 
+## A note on PopSockets
+All of these mounts are compatible with Swappable PopSockets - but you will need to remove the PopSocket for your phone to fit.
+You can buy a <a href="https://amzn.to/3q7fG7D">Swappable PopSocket on Amazon</a> for $10 to $15.
 
 # Mounts to avoid
 
