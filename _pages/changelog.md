@@ -1,8 +1,10 @@
 ---
 layout: page
 title: What's New
-include_in_header: true
+include_in_header: false
 ---
+
+This page is no longer maintained.
 
 # **Version 1.3.0**
 * A new video scrubber to make it much easier to precisely scrub to moments worth screenshotting or sharing.
