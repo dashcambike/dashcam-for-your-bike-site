@@ -2,17 +2,19 @@
 layout: page
 title: Recommended Mounts
 include_in_header: true
+order: 2
 ---
 
-# The Best Phone Mounts for Dashcam for your Bike
-<div>
+# Recommended Mounts for the Dashcam App
+Dashcam for your Bike turns your smartphone into a dashcam.
+The app has gesture-based controls so you don't have to take your eyes off the road, screen-dimming to save you battery life, direct-to-311 reporting in certain cities, and easy creation of compilation videos.
+
+<div style="text-align:center">
     <a class="appStoreLink" href="{{site.appstore_link}}"><img class="appStore" src="/assets/appstore.png"></a>
     {% if site.playstore_link %}
         <a class="playStoreLink" href="{{site.playstore_link}}"><img class="playStore" src="/assets/androidbeta.png"></a>
     {% endif %}
 </div>
-Dashcam for your Bike turns your smartphone into a dashcam.
-The app has gesture-based controls so you don't have to take your eyes off the road, screen-dimming to save you battery life, direct-to-311 reporting in certain cities, and easy creation of compilation videos.
 
 The app is compatible with any phone mount that doesn't block the camera. Here are our favorites.
 

@@ -109,7 +109,7 @@ header {
 	margin-right: 30px;
 }
 
-.logo > p {
+.logoText{
 	color: $header-title-color;
 	white-space: nowrap;
 	display: flex;
@@ -124,7 +124,7 @@ header {
 		margin-right: 0px;
 	}
 
-	.logo > p {
+  .logoText {
 		display: none;
 	}
 	

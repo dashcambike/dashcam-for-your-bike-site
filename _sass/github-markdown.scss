@@ -40,7 +40,7 @@ Markdown CSS adopted from https://github.com/sindresorhus/github-markdown-css
 .markdown-body h4 .octicon-link,
 .markdown-body h5 .octicon-link,
 .markdown-body h6 .octicon-link {
-  color: rgba(#000000, 1);  // Differs from default GitHub markdown styling
+  color: rgba(#000, 1);  // Differs from default GitHub markdown styling
   vertical-align: middle;
   visibility: hidden;
 }
@@ -52,7 +52,7 @@ Markdown CSS adopted from https://github.com/sindresorhus/github-markdown-css
 .markdown-body h4,
 .markdown-body h5,
 .markdown-body h6 {
-  color: rgba(#000000, 1);
+  color: rgba(#000, 1);
 }
 
 .markdown-body h1:hover .anchor,
@@ -76,12 +76,18 @@ Markdown CSS adopted from https://github.com/sindresorhus/github-markdown-css
 .markdown-body {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  color: rgba(#000000, 0.8);  // Differs from default GitHub markdown styling
+  color: rgba(#000, 0.8);  // Differs from default GitHub markdown styling
   line-height: 1.5;
   font-family: $font; // Use sitewide font stack instead of hardcoded font-stack
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
+  
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  height: fit-content;
+
 }
 
 .markdown-body .pl-c {
@@ -696,7 +702,7 @@ Markdown CSS adopted from https://github.com/sindresorhus/github-markdown-css
 }
 
 .markdown-body img {
-  background-color: #fff;
+  background-color: #000;
   box-sizing: content-box;
   max-width: 100%;
 }
