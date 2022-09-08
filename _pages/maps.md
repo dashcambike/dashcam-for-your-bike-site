@@ -237,7 +237,7 @@ console.log(featureProperties)
     }
     else if (filepath.endsWith(".png"))
     {
-        return heading + `<p><img src=\"${url}\" width="100%"/></p>`;
+        return heading + `<p><a href=\"${tweetURL}\" target=\"_blank\"><img src=\"${url}\" width="100%"/></a></p>`;
     }
     else
     {
