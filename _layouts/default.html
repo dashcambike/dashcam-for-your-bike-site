@@ -50,12 +50,7 @@
                                 {{ site.app_description }}
                             </p>
                         </div>
-                        <div class="downloadButtonsContainer">
-                            <a class="appStoreLink" href="{{site.appstore_link}}"><img class="appStore" src="assets/appstore.png"></a>
-                            {% if site.playstore_link %}
-                                <a class="playStoreLink" href="{{site.playstore_link}}"><img class="playStore" src="assets/androidbeta.png"></a>
-                            {% endif %}
-                        </div>
+                        {% include downloadnow.html %}
 
 
 <!-- Begin Mailchimp Signup Form -->
