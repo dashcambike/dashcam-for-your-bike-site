@@ -60,7 +60,18 @@ Turn your smartphone into a high-quality dashcam with our app, and report hazard
 </style>
 
 <script>
+/*
+Change to point to the Staging URL if needed.
+CDN helps JSONs load faster, automatically resizes images to reduce bandwidth, and costs less than hitting firebase endpoints.
+*/
+const cdnUrl = "https://dashcambikeprod-1ced4.kxcdn.com/o/";
+//const cdnUrl = "https://dashcambikestaging-1ced4.kxcdn.com/o/";
+
 mapboxgl.accessToken = 'pk.eyJ1IjoiZGFzaGNhbWJpa2UiLCJhIjoiY2w3cnozZDN0MGp5cTNubzAwbHF0NGIyaCJ9.PKvOiY3srXhJhl-cp17-Og';
+mapboxgl.clearStorage();
+
+// A terribly hacky way of caching for at most one hour (while images cache for 7 days)
+const currentUTCHourForCacheControl = (new Date()).getUTCHours();
 
 const map = new mapboxgl.Map({
     container: 'map',
@@ -79,8 +90,7 @@ map.on('load', () => {
     map.addSource('hazards', {
         'type': 'geojson',
         //'data': '/assets/hazardreports.geojson',
-        'data': 'https://firebasestorage.googleapis.com/v0/b/parrot-for-your-bike.appspot.com/o/GeoJsons%2Fpittsburgh.geojson?alt=media',
-        //'data': 'https://firebasestorage.googleapis.com/v0/b/dashcam-staging.appspot.com/o/GeoJsons%2Fpittsburgh.geojson?alt=media',
+        'data': cdnUrl + 'GeoJsons%2Fpittsburgh.geojson?alt=media&utcHourForCacheControl=' + currentUTCHourForCacheControl,
         cluster: false,
         clusterMaxZoom: 14, // Max zoom to cluster points on
         clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
@@ -183,7 +193,6 @@ map.on('load', () => {
 });
 
 function makeDateString(unixTimestamp) {
-console.log(unixTimestamp)
     const date = new Date(unixTimestamp * 1000);
 
     // 12-hour format
@@ -211,20 +220,22 @@ console.log(unixTimestamp)
 }
 
 function getDescriptionFor(featureProperties) {
-    const url = featureProperties.ImageOrVideoURL;
+console.log(featureProperties)
+    const filepath = featureProperties.ImageOrVideoFilepath;
+    const url = cdnUrl + filepath + "?alt=media&width=400";
     const hazardName = featureProperties.HazardName;
-    const tweetURL = featureProperties.TweetURL;
-    const address = featureProperties.ApproxAddress;
+    const tweetURL = featureProperties.TweetURL != undefined ? featureProperties.TweetURL : "https://twitter.com/dashcam311";
+    const address = featureProperties.ApproxAddress != undefined ? featureProperties.ApproxAddress : "";
     const dateStr = makeDateString(featureProperties.Timestamp);
 
 
     let heading = `<p class="popupTitle"><a href=\"${tweetURL}\" target=\"_blank\">${hazardName}</a></p>`;
     heading += `<p>${address}<br/>On ${dateStr}</p>`
-    if (url.endsWith(".mp4?alt=media"))
+    if (filepath.endsWith(".mp4"))
     {
         return heading + `<p><video width=\"100%\" controls autoplay><source src=\"${url}\" type=\"video/mp4\"/></video></p>`;
     }
-    else if (url.endsWith("png?alt=media"))
+    else if (filepath.endsWith(".png"))
     {
         return heading + `<p><img src=\"${url}\" width="100%"/></p>`;
     }
