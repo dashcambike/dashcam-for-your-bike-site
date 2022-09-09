@@ -104,7 +104,7 @@ Turn your smartphone into a high-quality dashcam with our app, and report hazard
 {% include downloadnow.html %}
 
 <div id="description">
-<h1>What's the Point?</h1>
+<h1>How the city uses this data</h1>
 Let's face it: the city does not have the resources to fix all every problem we encounter. By submitting 311 reports through the app, you're helping the city prioritize improvements in areas that need in the most.
 
 <figure class="testimonial">
