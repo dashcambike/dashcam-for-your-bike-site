@@ -18,33 +18,75 @@
 
 <body style="margin: 0px;">
     <div id="map"></div>
-    <nav id="filter-group-type" class="filter-group"></nav>
-    <nav id="filter-group-time" class="filter-group">
-        <div class='session' id='timesliderbar'>
-          <h2><label id='active-hour'>Time</label></h2>
-          <div class='row' id='singlehourfilters'>
-            <input id='anytime' type='radio' name='singlehourmode' value='anytime' checked='checked'>
-            <label for='anytime'>Anytime</label>
-            <input id='specifichour' type='radio' name='singlehourmode' value='specifichour'>
-            <label for='specifichour'>Specific Hour</label>
+    <nav id="filter-group" class="filter-group">
+        <div class='filter-item' id='timesliderbar'>
+          <button class="toggleFilterButton" onclick="toggleFilter('hour')">
+              <h2 class='filter-header'>
+                  <label id='active-hour'>Any time</label>
+                  <i id="chevron-hour" class="filter-chevron fa-solid fa-circle-chevron-right"></i>
+              </h2>
+          </button>
+
+          <div class='filter-details' id='filter-details-hour'>
+            <div>
+                <input id='anytime' type='radio' name='singlehourmode' value='anytime' checked='checked'>
+                <label for='anytime'>Anytime</label>
+                <input id='specifichour' type='radio' name='singlehourmode' value='specifichour'>
+                <label for='specifichour'>Specific Hour</label>
+            </div>
+
+            <div>
+                <input id='timeslider' class='row' type='range' min='0' max='23' step='1' value='12' disabled />
+            </div>
           </div>
-          <input id='timeslider' class='row' type='range' min='0' max='23' step='1' value='12' disabled />
         </div>
 
-        <div class='session'>
-          <h2>Day of the week</h2>
-          <div class='row' id='dayofweekfilters'>
-            <input id='all' type='radio' name='dayofweekmode' value='all' checked='checked'>
-            <label for='all'>All</label>
-            <input id='weekday' type='radio' name='dayofweekmode' value='weekday'>
-            <label for='weekday'>Weekday</label>
-            <input id='weekend' type='radio' name='dayofweekmode' value='weekend'>
-            <label for='weekend'>Weekend</label>
+        <div class='filter-item'>
+          <button class="toggleFilterButton" onclick="toggleFilter('day-of-week')">
+              <h2 class='filter-header'>
+                  <label id='active-day-of-week'>Any day of week</label>
+                  <i id="chevron-day-of-week" class="filter-chevron fa-solid fa-circle-chevron-right"></i>
+              </h2>
+          </button>
+
+          <div class='filter-details' id='filter-details-day-of-week'>
+            <span class="filter-label">
+                <label for='all'>
+                    <input id='all' type='radio' name='dayofweekmode' value='all' checked='checked'>
+                    All
+                </label>
+            </span>
+            
+            <span class="filter-label">
+                <label for='weekday'>
+                    <input id='weekday' type='radio' name='dayofweekmode' value='weekday'>
+                    Weekday
+                </label>
+            </span>
+            
+            <span class="filter-label">
+                <label for='weekend'>
+                    <input id='weekend' type='radio' name='dayofweekmode' value='weekend'>
+                    Weekend
+                </label>
+            </span>
+          </div>
+        </div>
+
+        <div class='filter-item'>
+          <button class="toggleFilterButton" onclick="toggleFilter('hazard-type')">
+              <h2 class='filter-header'>
+                  <label id='active-hazard-types'>All hazard types</label>
+                  <i id="chevron-hazard-type" class="filter-chevron fa-solid fa-circle-chevron-right"></i>
+              </h2>
+          </button>
+          <div class="filter-details"  id='filter-details-hazard-type'>
           </div>
         </div>
     </nav>
 
     <link href="/assets/map.css" rel="stylesheet">
     <script src="/assets/map.js"></script>
+    <script src="https://kit.fontawesome.com/1c79ae00a7.js" crossorigin="anonymous"></script>
 </body>
 </html>

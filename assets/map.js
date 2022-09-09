@@ -13,12 +13,12 @@ const hazardTypes = {
         "color": "rgb(123, 0, 48)",
         isVisible: true,
     },
-    "Dangerous driving": {
-        "color": "rgb(189, 0, 78)",
-        isVisible: true,
-    },
     "Obstruction in bike lane": {
         "color": "rgb(54, 0, 123)",
+        isVisible: true,
+    },
+    "Dangerous driving": {
+        "color": "rgb(189, 0, 78)",
         isVisible: true,
     },
     "Pothole": {
@@ -93,7 +93,7 @@ function getDescriptionFor(featureProperties) {
     }
 }
 
-function getFilterForHazardType()
+function getFilterForHazardTypeAndUpdateUI()
 {
     // If the "other" category is visible:
     //      match ALL '!=' filters
@@ -102,8 +102,19 @@ function getFilterForHazardType()
     const isOtherVisible = hazardTypes["Other"].isVisible;
     let filters = isOtherVisible ? ['all'] : ["any"];
     
+    let numVisible = 0;
+    let lastSeenVisible = "";
+
     for (const [hazardName, hazardTypeData] of Object.entries(hazardTypes)) {
-        if (hazardName == "Other") continue;
+        if (hazardTypeData.isVisible)
+        {
+            ++numVisible;
+            lastSeenVisible = hazardName;
+        }
+        if (hazardName == "Other")
+        {
+            continue;
+        }
 
         if (!isOtherVisible && hazardTypeData.isVisible)
         {
@@ -115,6 +126,19 @@ function getFilterForHazardType()
             // If other is shown, remove anything not matching unchecked types
             filters.push(['!=', ['string', ['get', 'HazardName']], hazardName]);
         }
+    }
+
+    if (numVisible == Object.keys(hazardTypes).length)
+    {
+        document.getElementById('active-hazard-types').innerText = "All hazard types";
+    }
+    else if (numVisible == 1)
+    {
+        document.getElementById('active-hazard-types').innerText = lastSeenVisible;
+    }
+    else
+    {
+        document.getElementById('active-hazard-types').innerText = numVisible + " hazard types";
     }
 
     if (filters.length == 1)
@@ -132,7 +156,7 @@ function getFilterForHourAndUpdateUI()
 
     if (!filteredHour.doSpecifyHour)
     {
-        document.getElementById('active-hour').innerText = "Time";
+        document.getElementById('active-hour').innerText = "Any time";
         return null;
     }
 
@@ -145,7 +169,7 @@ function getFilterForHourAndUpdateUI()
     const hour12 = hour % 12 ? hour % 12 : 12;
 
     // update text in the UI
-    document.getElementById('active-hour').innerText = "Hour: " + hour12 + ampm;
+    document.getElementById('active-hour').innerText = "At " + hour12 + ampm;
 
     return filters;
 }
@@ -175,7 +199,7 @@ function getFilterForDayOfWeek()
 
 function applyFilter(map) {
     let filters = [
-        getFilterForHazardType(),
+        getFilterForHazardTypeAndUpdateUI(),
         getFilterForHourAndUpdateUI(),
         getFilterForDayOfWeek()
     ];
@@ -326,7 +350,7 @@ function buildMap() {
             'waterway-label'
         );
 
-        const filterGroupType = document.getElementById('filter-group-type');
+        const filterGroupType = document.getElementById('filter-details-hazard-type');
         for (const [hazardName, hazardTypeData] of Object.entries(hazardTypes)) {
             const labelId = 'filter-' + hazardName;
             // Add checkbox and label elements for the layer.
@@ -341,28 +365,48 @@ function buildMap() {
             label.setAttribute('for', labelId);
             filterGroupType.appendChild(label);
 
-            // When the checkbox changes, update the visibility of the layer.
+            // Handle toggle of hazard types
             input.addEventListener('change', (e) => {
                 hazardTypes[hazardName].isVisible = e.target.checked;
                 applyFilter(map);
             });
         }
 
-        const filterGroupTime = document.getElementById('filter-group-time');
+        // Handle Hour slider
         document.getElementById('timeslider').addEventListener('input', (event) => {
             filteredHour.hourSpecified = event.target.value;
             applyFilter(map);
         });
-        document.getElementById('singlehourfilters').addEventListener('change', (event) => {
+
+        // Handle Hour enabled/disabled toggle
+        document.getElementById('filter-details-hour').addEventListener('change', (event) => {
             const useSingleHour = event.target.value;
+            if (useSingleHour != 'specifichour' && useSingleHour != 'anytime')
+            {
+                // event is a mouse up or something
+                return;
+            }
             filteredHour.doSpecifyHour = useSingleHour == 'specifichour'
             filteredHour.hourSpecified = document.getElementById('timeslider').value;
             applyFilter(map);
         });
-        document.getElementById('dayofweekfilters').addEventListener('change', (event) => {
+
+        // Handle Day of Week toggle
+        document.getElementById('filter-details-day-of-week').addEventListener('change', (event) => {
             const day = event.target.value;
             filteredHour.doSpecifyDayOfWeek = day != 'all';
             filteredHour.dayOfWeekSpecified = day;
+
+            if (!filteredHour.doSpecifyDayOfWeek)
+            {
+                text = "Any day of week";
+            }
+            else
+            {
+                text = "Only " + day + "s";
+            }
+            document.getElementById('active-day-of-week').innerText = text;
+
             applyFilter(map);
         });
     });
@@ -396,6 +440,29 @@ function buildMap() {
     map.on('mouseleave', 'hazards-point', () => {
         map.getCanvas().style.cursor = '';
     });
+}
+
+function toggleFilter(myDivSuffix) {
+    const detailsDivBaseName = 'filter-details-';
+    const chevronDivBaseName = 'chevron-';
+    const validDivs = ['hour', 'day-of-week', 'hazard-type'];
+
+    const myDetailsDiv = detailsDivBaseName + myDivSuffix;
+    const myChevronDiv = chevronDivBaseName + myDivSuffix;
+    const alreadyOpen = document.getElementById(myDetailsDiv).style.display == 'block';
+
+    for (const divSuffix of validDivs)
+    {
+        document.getElementById(detailsDivBaseName + divSuffix).style.display = 'none';
+        document.getElementById(chevronDivBaseName + divSuffix).classList.remove('fa-circle-chevron-down');
+        document.getElementById(chevronDivBaseName + myDivSuffix).classList.add('fa-circle-chevron-right');
+    }
+
+    if (!alreadyOpen)
+    {
+        document.getElementById(myDetailsDiv).style.display = 'block';
+        document.getElementById(myChevronDiv).classList.add('fa-circle-chevron-down');
+    }
 }
 
 buildMap();
