@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+    <title>Dashcam for your Bike Hazard Map</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+
+    <script type="text/javascript">
+        if(window == window.top) {
+            // not in an iframe - don't allow that
+            window.location.href = "/maps/";
+        }
+    </script>
+</head>
+
+<body style="margin: 0px;">
+    <div id="map"></div>
+    <nav id="filter-group-type" class="filter-group"></nav>
+    <nav id="filter-group-time" class="filter-group">
+        <div class='session' id='timesliderbar'>
+          <h2><label id='active-hour'>Time</label></h2>
+          <div class='row' id='singlehourfilters'>
+            <input id='anytime' type='radio' name='singlehourmode' value='anytime' checked='checked'>
+            <label for='anytime'>Anytime</label>
+            <input id='specifichour' type='radio' name='singlehourmode' value='specifichour'>
+            <label for='specifichour'>Specific Hour</label>
+          </div>
+          <input id='timeslider' class='row' type='range' min='0' max='23' step='1' value='12' disabled />
+        </div>
+
+        <div class='session'>
+          <h2>Day of the week</h2>
+          <div class='row' id='dayofweekfilters'>
+            <input id='all' type='radio' name='dayofweekmode' value='all' checked='checked'>
+            <label for='all'>All</label>
+            <input id='weekday' type='radio' name='dayofweekmode' value='weekday'>
+            <label for='weekday'>Weekday</label>
+            <input id='weekend' type='radio' name='dayofweekmode' value='weekend'>
+            <label for='weekend'>Weekend</label>
+          </div>
+        </div>
+    </nav>
+
+    <link href="/assets/map.css" rel="stylesheet">
+    <script src="/assets/map.js"></script>
+</body>
+</html>
