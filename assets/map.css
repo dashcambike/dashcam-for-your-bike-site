@@ -1,7 +1,8 @@
 #map {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 50px); /* Leave room for nav bar at top */
+    bottom: 0px;
     overflow:hidden;
 }
 .mapboxgl-popup
@@ -14,10 +15,17 @@
 {
     min-height: 250px;
 }
-.popupTitle
+.popup-title
 {
     font-weight: 600;
     font-size: 1.5em;
+    margin-top: 0px;
+}
+.popup-body
+{
+    max-height: 300px;
+    overflow: auto;
+    margin-top: 8px;
 }
 .mapboxgl-popup-close-button
 {

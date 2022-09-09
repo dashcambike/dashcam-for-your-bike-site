@@ -7,7 +7,10 @@ those updates reflected live, use incognito or change currentUTCHourForCacheCont
 const cdnUrl = "https://dashcambikeprod-1ced4.kxcdn.com/o/";
 //const cdnUrl = "https://dashcambikestaging-1ced4.kxcdn.com/o/";
 
-// Used for filtering and for consistent data
+/**
+  * Contains both filtering data, and requested colors
+  * for each data type. Note: the requested colors are ignored currently. (TODO)
+  */
 const hazardTypes = {
     "Car parked in bike lane": {
         "color": "rgb(123, 0, 48)",
@@ -31,14 +34,34 @@ const hazardTypes = {
         isVisible: true,
     }
 };
+
+/**
+  * Data reflecting the state of UI filter options:
+  * Are we filtering by a specific hour or weekday/weekend?
+  * If so, what?
+  */
 let filteredHour = {
     'doSpecifyHour': false,
     'hourSpecified': -1,
 
     'doSpecifyDayOfWeek': false,
-    'dayOfWeekSpecified': -1
+    'dayOfWeekSpecified': "all" // or "weekend", or "weekday"
 };
 
+/**
+  * The most-recently-opened mapboxGL Popup
+  */
+let lastOpenedPopup = null;
+
+function fixPopupPositionAfterLoad()
+{
+    if (lastOpenedPopup == null)
+    {
+        return;
+    }
+
+    lastOpenedPopup.setLngLat(lastOpenedPopup.getLngLat());
+}
 
 function makeDateString(unixTimestamp) {
     const date = new Date(unixTimestamp * 1000);
@@ -76,21 +99,23 @@ function getDescriptionFor(featureProperties) {
     const dateStr = makeDateString(featureProperties.Timestamp);
 
 
-    let heading = `<p class="popupTitle"><a href=\"${tweetURL}\" target=\"_blank\">${hazardName}</a></p>`;
-    heading += `<p>${address}<br/>On ${dateStr}</p>`
+    let popupBody = "<div class=\"popup-body\">";
+    popupBody += `<p class="popup-title"><a href="${tweetURL}" target="_blank">${hazardName}</a></p>`;
+    popupBody += `<p>${address}<br/>On ${dateStr}</p>`;
     if (filepath.endsWith(".mp4"))
     {
-        return heading + `<p><video width=\"100%\" controls autoplay><source src=\"${url}\" type=\"video/mp4\"/></video></p>`;
+        popupBody += `<p><video width="100%" controls autoplay><source src="${url}" type="video/mp4"></video></p>`;
     }
     else if (filepath.endsWith(".png"))
     {
-        return heading + `<p><a href=\"${tweetURL}\" target=\"_blank\"><img src=\"${url}\" width="100%"/></a></p>`;
+        popupBody += `<p><a href="${tweetURL}" target="_blank"><img src="${url}" width="100%" onload="fixPopupPositionAfterLoad()"/></a></p>`;
     }
     else
     {
         console.log("Invalid image");
-        return heading;
     }
+    popupBody += "</div>";
+    return popupBody;
 }
 
 function getFilterForHazardTypeAndUpdateUI()
@@ -425,7 +450,7 @@ function buildMap() {
             coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
         }
          
-        new mapboxgl.Popup()
+        lastOpenedPopup = new mapboxgl.Popup()
             .setLngLat(coordinates)
             .setHTML(description)
             .addTo(map);
