@@ -10,6 +10,78 @@ order: 3
 .container {
     max-width: 100vw;
 }
+
+/* Testimonial */
+.testimonial {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  color: #9e9e9e;
+  display: block;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 310px;
+  min-width: 250px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border-top: 5px solid #d2652d;
+}
+
+.testimonial *,
+.testimonial *:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.testimonial figcaption {
+  padding: 13% 10% 12%;
+}
+
+.testimonial figcaption:before {
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  color: #d2652d;
+  content: "\f10e";
+  font-family: 'FontAwesome';
+  font-size: 32px;
+  font-style: normal;
+  left: 50%;
+  line-height: 60px;
+  position: absolute;
+  top: -30px;
+  width: 60px;
+}
+
+.testimonial h3 {
+  color: #3c3c3c;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 24px;
+  margin: 10px 0 5px;
+}
+
+.testimonial h4 {
+  font-weight: 400;
+  margin: 0;
+  opacity: 0.5;
+}
+
+.testimonial blockquote {
+  font-style: italic;
+  font-weight: 300;
+  margin: 0 0 20px;
+}
+
 </style>
 
 <h1>Pittsburgh Bicycle Hazard Map</h1>
@@ -29,5 +101,26 @@ Not in Pittsburgh? <a href="https://forms.gle/HHFisHhgsHxaMvFi8" target="_blank"
 <h1>Download Dashcam for your Bike</h1>
 Turn your smartphone into a high-quality dashcam with our app, and report hazards to your city:
 </div>
-
 {% include downloadnow.html %}
+
+<div id="description">
+<h1>What's the Point?</h1>
+Let's face it: the city does not have the resources to fix all every problem we encounter. By submitting 311 reports through the app, you're helping the city prioritize improvements in areas that need in the most.
+
+<figure class="testimonial">
+  <figcaption>
+    <blockquote>
+      <p>"[This data] will be used to inform DOMI's efforts to create a safe and connected bike network that increases access for people of all ages and abilities."</p>
+    </blockquote>
+    <h3>Rylan Seifert</h3>
+    <h4>Pittsburgh's Department of Mobility and Infrastructure</h4>
+  </figcaption>
+</figure>
+
+
+Hear more about our 2022 collaboration with DOMI:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DlN3Tk9lYvI?start=22" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</div>
+
+<script src="https://kit.fontawesome.com/1c79ae00a7.js" crossorigin="anonymous"></script>
