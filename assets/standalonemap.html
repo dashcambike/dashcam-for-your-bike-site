@@ -18,7 +18,7 @@
 
 <body style="margin: 0px;">
     <div id="map"></div>
-    <nav id="filter-group" class="filter-group">
+    <nav id="filter-header" class="filter-group">
         <div class='filter-item' id='timesliderbar'>
           <button class="toggleFilterButton" onclick="toggleFilter('hour')">
               <h2 class='filter-header'>
@@ -26,19 +26,6 @@
                   <i id="chevron-hour" class="filter-chevron fa-solid fa-circle-chevron-right"></i>
               </h2>
           </button>
-
-          <div class='filter-details' id='filter-details-hour'>
-            <div>
-                <input id='anytime' type='radio' name='singlehourmode' value='anytime' checked='checked'>
-                <label for='anytime'>Anytime</label>
-                <input id='specifichour' type='radio' name='singlehourmode' value='specifichour'>
-                <label for='specifichour'>Specific Hour</label>
-            </div>
-
-            <div>
-                <input id='timeslider' class='row' type='range' min='0' max='23' step='1' value='12' disabled />
-            </div>
-          </div>
         </div>
 
         <div class='filter-item'>
@@ -48,29 +35,6 @@
                   <i id="chevron-day-of-week" class="filter-chevron fa-solid fa-circle-chevron-right"></i>
               </h2>
           </button>
-
-          <div class='filter-details' id='filter-details-day-of-week'>
-            <span class="filter-label">
-                <label for='all'>
-                    <input id='all' type='radio' name='dayofweekmode' value='all' checked='checked'>
-                    All
-                </label>
-            </span>
-            
-            <span class="filter-label">
-                <label for='weekday'>
-                    <input id='weekday' type='radio' name='dayofweekmode' value='weekday'>
-                    Weekday
-                </label>
-            </span>
-            
-            <span class="filter-label">
-                <label for='weekend'>
-                    <input id='weekend' type='radio' name='dayofweekmode' value='weekend'>
-                    Weekend
-                </label>
-            </span>
-          </div>
         </div>
 
         <div class='filter-item'>
@@ -80,8 +44,44 @@
                   <i id="chevron-hazard-type" class="filter-chevron fa-solid fa-circle-chevron-right"></i>
               </h2>
           </button>
-          <div class="filter-details"  id='filter-details-hazard-type'>
+        </div>
+    </nav>
+    <nav class="filter-group">
+        <div class='filter-details' id='filter-details-hour'>
+          <div>
+              <input id='anytime' type='radio' name='singlehourmode' value='anytime' checked='checked'>
+              <label for='anytime'>Anytime</label>
+              <input id='specifichour' type='radio' name='singlehourmode' value='specifichour'>
+              <label for='specifichour'>Specific Hour</label>
           </div>
+
+          <div>
+              <input id='timeslider' class='row' type='range' min='0' max='23' step='1' value='12' disabled />
+          </div>
+        </div>
+        <div class='filter-details' id='filter-details-day-of-week'>
+          <span class="filter-label">
+              <label for='all'>
+                  <input id='all' type='radio' name='dayofweekmode' value='all' checked='checked'>
+                  All
+              </label>
+          </span>
+          
+          <span class="filter-label">
+              <label for='weekday'>
+                  <input id='weekday' type='radio' name='dayofweekmode' value='weekday'>
+                  Weekday
+              </label>
+          </span>
+          
+          <span class="filter-label">
+              <label for='weekend'>
+                  <input id='weekend' type='radio' name='dayofweekmode' value='weekend'>
+                  Weekend
+              </label>
+          </span>
+        </div>
+        <div class="filter-details"  id='filter-details-hazard-type'>
         </div>
     </nav>
 

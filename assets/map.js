@@ -13,24 +13,29 @@ const cdnUrl = "https://dashcambikeprod-1ced4.kxcdn.com/o/";
   */
 const hazardTypes = {
     "Car parked in bike lane": {
-        "color": "rgb(123, 0, 48)",
+        hazardIcon: 'car-15',
+        hazardColor: "rgb(123, 0, 48)",
         isVisible: true,
     },
     "Obstruction in bike lane": {
-        "color": "rgb(54, 0, 123)",
+        hazardIcon: 'information-15',
+        hazardColor: "rgb(54, 0, 123)",
         isVisible: true,
     },
     "Dangerous driving": {
-        "color": "rgb(189, 0, 78)",
+        hazardIcon: 'fire-station-15',
+        hazardColor: "rgb(189, 0, 78)",
         isVisible: true,
     },
     "Pothole": {
-        "color": "rgb(33, 83, 65)",
+        hazardIcon: 'information-15',
+        hazardColor: "rgb(33, 83, 65)",
         isVisible: true,
     },
     "Other": {
-        /* other or cluster: same as car parked in bike lane */ 
-        "color": "rgb(123, 0, 48)",
+        /* also used for clusters */ 
+        hazardIcon: 'information-15',
+        hazardColor: "rgb(123, 0, 48)",
         isVisible: true,
     }
 };
@@ -108,7 +113,7 @@ function getDescriptionFor(featureProperties) {
     }
     else if (filepath.endsWith(".png"))
     {
-        popupBody += `<p><a href="${tweetURL}" target="_blank"><img src="${url}" width="100%" onload="fixPopupPositionAfterLoad()"/></a></p>`;
+        popupBody += `<p><a href="${tweetURL}" target="_blank"><img class="image-loading" src="${url}" width="100%" onload="fixPopupPositionAfterLoad()"/></a></p>`;
     }
     else
     {
@@ -285,7 +290,7 @@ function buildMap() {
                 'id': 'hazards-heatmap',
                 'type': 'heatmap',
                 'source': 'hazards',
-                'maxzoom': 15,
+                'maxzoom': 18,
                 'paint': {
                     // Increase the heatmap color weight weight by zoom level
                     // heatmap-intensity is a multiplier on top of heatmap-weight
@@ -329,47 +334,58 @@ function buildMap() {
                         'interpolate',
                         ['linear'],
                         ['zoom'],
-                        12, 1,
-                        15, 0
+                        15, 1,
+                        18, 0,
                     ]
                 }
             },
             'waterway-label'
         );
 
+        let iconLayoutProps = [ 'match', ['get', 'HazardName'] ];
+        let iconPaintProps = [ 'match', ['get', 'HazardName'] ];
+        for (const [hazardName, hazardTypeData] of Object.entries(hazardTypes)) {
+            if (hazardName == "Other") continue;
+            iconLayoutProps.push(hazardName);
+            iconLayoutProps.push(hazardTypeData.hazardIcon);
+
+            iconPaintProps.push(hazardName);
+            iconPaintProps.push(hazardTypeData.hazardColor);
+        }
+        iconLayoutProps.push(hazardTypes['Other'].hazardIcon);
+        iconPaintProps.push(hazardTypes['Other'].hazardColor);
+
         map.addLayer(
             {
                 'id': 'hazards-point',
-                'type': 'circle',
+                'type': 'symbol',
                 'source': 'hazards',
-                'minzoom': 7,
-                'paint': {
-                    'circle-color': [
-                        'match',
-                        ['get', 'HazardName'],
-                        "Car parked in bike lane",
-                        'rgb(123, 0, 48)',
-                        "Dangerous driving",
-                        'rgb(189, 0, 78)',
-                        "Obstruction in bike lane",
-                        'rgb(54, 0, 123)',
-                        "Pothole",
-                        'rgb(33, 83, 65)',
-                        /* other or cluster: same as car parked in bike lane */ 'rgb(123, 0, 48)'
-
-                    ],
-                    'circle-stroke-color': 'white',
-                    'circle-stroke-width': 1,
-                    // Transition from heatmap to circle layer by zoom level
-                    'circle-opacity': [
+                'minzoom': 12,
+                'layout': {
+                    'icon-image': iconLayoutProps,
+                    'icon-allow-overlap': true,
+                    'icon-size': [
                         'interpolate',
                         ['linear'],
                         ['zoom'],
-                        7,
-                        0,
-                        8,
+                        12,
+                        1,
+                        20,
+                        3
+                    ],
+                },
+                'paint': {
+                    // Transition from heatmap by zoom level
+                    'icon-opacity': [
+                        'interpolate',
+                        ['linear'],
+                        ['zoom'],
+                        12,
+                        0.5,
+                        13,
                         1
-                    ]
+                    ],
+                    'icon-halo-color': iconPaintProps
                 }
             },
             'waterway-label'
@@ -474,18 +490,18 @@ function toggleFilter(myDivSuffix) {
 
     const myDetailsDiv = detailsDivBaseName + myDivSuffix;
     const myChevronDiv = chevronDivBaseName + myDivSuffix;
-    const alreadyOpen = document.getElementById(myDetailsDiv).style.display == 'block';
+    const alreadyOpen = document.getElementById(myDetailsDiv).style.visibility == 'visible';
 
     for (const divSuffix of validDivs)
     {
-        document.getElementById(detailsDivBaseName + divSuffix).style.display = 'none';
+        document.getElementById(detailsDivBaseName + divSuffix).style.visibility = 'collapse';
         document.getElementById(chevronDivBaseName + divSuffix).classList.remove('fa-circle-chevron-down');
         document.getElementById(chevronDivBaseName + myDivSuffix).classList.add('fa-circle-chevron-right');
     }
 
     if (!alreadyOpen)
     {
-        document.getElementById(myDetailsDiv).style.display = 'block';
+        document.getElementById(myDetailsDiv).style.visibility = 'visible';
         document.getElementById(myChevronDiv).classList.add('fa-circle-chevron-down');
     }
 }

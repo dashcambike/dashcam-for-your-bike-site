@@ -32,6 +32,13 @@
     font-size: 2em;
     margin-right: 5px;
 }
+.image-loading
+{
+  background: transparent url('/assets/loading.gif') center no-repeat;
+  min-width: 200px;
+  min-height: 120px;
+
+}
 
 /* Filtering */
 .filter-item {
@@ -39,20 +46,22 @@
     text-align: center;
 }
 
+#filter-header {
+    top: 0px;
+    background-color: #111112;
+}
+
 .filter-group {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
 
-    top: 0px;
     width: 100%;
     font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: 600;
     position: relative;
     z-index: 1;
-    border-radius: 6px;
     color: #fff;
-    background-color: #111112;
 }
 
 .filter-group input[type='checkbox']:first-child + label {
@@ -97,10 +106,11 @@
 
 /* Toggling filters */
 .filter-details {
-    position: absolute;
     background-color: #111112;
     padding: 10px;
-    display: none;
+    visibility: collapse;
+    text-align: center;
+    height: min-content;
 }
 
 .toggleFilterButton {

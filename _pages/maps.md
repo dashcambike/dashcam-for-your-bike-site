@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Pittsburgh Hazard Map
+title: Bicycle Hazard Report Map, Pittsburgh Pennsylvania
 include_in_header: false
 include_in_footer: false
 order: 3
@@ -20,8 +20,6 @@ order: 3
   font-size: 16px;
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
   max-width: 310px;
   min-width: 250px;
   position: relative;
@@ -84,7 +82,7 @@ order: 3
 
 </style>
 
-<h1>Pittsburgh Bicycle Hazard Map</h1>
+<h1>Pittsburgh's Map of Reported Hazard for Bicyclists</h1>
 Each of these reports has been sent to the City of Pittsburgh via 311.
 
 <h1>Contribute to this map</h1>
@@ -119,7 +117,10 @@ Let's face it: the city does not have the resources to fix all every problem we 
 
 
 Hear more about our 2022 collaboration with DOMI:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DlN3Tk9lYvI?start=22" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/DlN3Tk9lYvI?start=22" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 </div>
 
