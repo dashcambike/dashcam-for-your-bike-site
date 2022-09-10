@@ -260,7 +260,8 @@ function buildMap() {
     mapboxgl.clearStorage();
 
     // A terribly hacky way of caching for at most one hour (while images cache for 7 days)
-    const currentUTCHourForCacheControl = (new Date()).getUTCHours();
+    const date = new Date();
+    const currentUTCHourForCacheControl = date.getDate() + "-" + date.getUTCHours();
 
     const map = new mapboxgl.Map({
         container: 'map',
@@ -490,18 +491,18 @@ function toggleFilter(myDivSuffix) {
 
     const myDetailsDiv = detailsDivBaseName + myDivSuffix;
     const myChevronDiv = chevronDivBaseName + myDivSuffix;
-    const alreadyOpen = document.getElementById(myDetailsDiv).style.visibility == 'visible';
+    const alreadyOpen = document.getElementById(myDetailsDiv).style.display == 'block';
 
     for (const divSuffix of validDivs)
     {
-        document.getElementById(detailsDivBaseName + divSuffix).style.visibility = 'collapse';
+        document.getElementById(detailsDivBaseName + divSuffix).style.display = 'none';
         document.getElementById(chevronDivBaseName + divSuffix).classList.remove('fa-circle-chevron-down');
         document.getElementById(chevronDivBaseName + myDivSuffix).classList.add('fa-circle-chevron-right');
     }
 
     if (!alreadyOpen)
     {
-        document.getElementById(myDetailsDiv).style.visibility = 'visible';
+        document.getElementById(myDetailsDiv).style.display = 'block';
         document.getElementById(myChevronDiv).classList.add('fa-circle-chevron-down');
     }
 }

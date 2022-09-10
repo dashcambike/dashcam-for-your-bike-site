@@ -119,7 +119,7 @@ Let's face it: the city does not have the resources to fix all every problem we 
 Hear more about our 2022 collaboration with DOMI:
 
 <div>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/DlN3Tk9lYvI?start=22" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe style="max-width: 100%; width: 560px; height: 360px" src="https://www.youtube.com/embed/DlN3Tk9lYvI?start=22" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 </div>

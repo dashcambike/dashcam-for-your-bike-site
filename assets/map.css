@@ -44,11 +44,12 @@
 .filter-item {
     flex-basis: 100%;
     text-align: center;
+    height: min-content;
+    background-color: #111112;
 }
 
 #filter-header {
     top: 0px;
-    background-color: #111112;
 }
 
 .filter-group {
@@ -108,7 +109,7 @@
 .filter-details {
     background-color: #111112;
     padding: 10px;
-    visibility: collapse;
+    display: none;
     text-align: center;
     height: min-content;
 }
@@ -132,9 +133,7 @@
         font-size: 1.2em;
     }
 
-    .filter-chevron {
-        /* On a new line on small screen */
-        display: block !important;
-        bottom: 0px;
+    .filter-group {
+        flex-direction: column;
     }
 }
