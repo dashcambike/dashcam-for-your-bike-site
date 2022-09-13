@@ -467,7 +467,15 @@ function buildMap() {
             coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
         }
          
-        lastOpenedPopup = new mapboxgl.Popup()
+        const options = {}
+        if (Math.min(window.screen.width, window.screen.height) < 768)
+        {
+            // Center the map on mobile / small screens to ensure popup is visible
+            const verticalShift = window.innerHeight * 0.1;
+            map.flyTo({center: coordinates, padding: {top: 0, bottom:0, left: 0, right: 0}});
+            options['anchor'] = 'center';
+        }
+        lastOpenedPopup = new mapboxgl.Popup(options)
             .setLngLat(coordinates)
             .setHTML(description)
             .addTo(map);
