@@ -32,7 +32,7 @@ youtube_username                          :
 # SEO (https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md)
 twitter:
     username: DashcamBike
-        card: summary
+    card: summary
 logo: /assets/oglogo.png
 tagline: Turn your smartphone into a dashcam
 description: Turn your smartphone into a dashcam. Capture cars blocking bike lanes and other daily hazards. Available on iOS, and now ready for beta testing on Android.
