@@ -84,6 +84,7 @@ order: 3
 
 <h1>Pittsburgh's Map of Reported Hazard for Bicyclists</h1>
 Each of these reports has been sent to the City of Pittsburgh via 311.
+The map does not represent the most dangerous areas of the city; rather, it represents areas where the most hazards have been reported, and where better infrastructure would be most impactful.
 
 <h1>Contribute to this map</h1>
 1. Download our app for <a href="https://play.google.com/store/apps/details?id=com.dashcambike.dashcamapp">Android</a> or <a href="https://apps.apple.com/us/app/dashcam-for-your-bike/id1577996345?uo=4">iPhone</a> and record every ride.
