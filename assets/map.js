@@ -4,8 +4,8 @@ CDN helps JSONs load faster, automatically resizes images to reduce bandwidth, a
 Note: these caches will not refresh with a browser hard refresh; if you update the geojson and need to see
 those updates reflected live, use incognito or change currentUTCHourForCacheControl in the URL
 */
-const cdnUrl = "https://dashcambikeprod-1ced4.kxcdn.com/o/";
-//const cdnUrl = "https://dashcambikestaging-1ced4.kxcdn.com/o/";
+//const cdnUrl = "https://dashcamstaging.b-cdn.net/o/";
+const cdnUrl = "https://dashcamprod.b-cdn.net/o/";
 
 /**
   * Contains both filtering data, and requested colors
