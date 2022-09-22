@@ -1,8 +1,10 @@
 ---
 layout: page
-title: Bicycle Hazard Report Map, Pittsburgh Pennsylvania
-include_in_header: false
+title: 311 Hazard Map
+fulltitle: Hazard Report Map, Pittsburgh Pennsylvania
+include_in_header: true
 include_in_footer: false
+image: assets/map.png
 order: 3
 ---
 

@@ -4,7 +4,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<title class="pageTitle">
-        {% if page.title %}
+        {% if page.fulltitle %}
+            {{ page.fulltitle }}
+        {% else if page.title %}
             {{ page.title }}
         {% else %}
             {{ site.title }}
@@ -26,5 +28,12 @@
     {% endif %}
 
     {% seo %}
-    <meta property="og:image" content="https://dashcam.bike/assets/icon.png">
+
+    {% if page.image %}
+        <meta name="twitter:image" content="{{ page.image | absolute_url }}">
+        <meta property="og:image" content="{{ page.image  | absolute_url }}">
+        <meta name="twitter:card" content="summary_large_image">
+    {% else %}
+        <meta property="og:image" content="https://dashcam.bike/assets/icon.png">
+    {% endif %}
 </head>
