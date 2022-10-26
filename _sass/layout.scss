@@ -495,12 +495,12 @@
 /*** Sections: below the main preview ***/
 .section {
 	display: grid;
-	margin-top: 93px;
+	margin-bottom: 35px;
     padding: 40px;
     color: $main-text-color;
     line-height: 1.7em;
-
-    column-gap: 30px;
+    column-gap: 70px;
+    border-top: 1px solid #ffffff15;
 }
 
 .section h1 {
@@ -542,6 +542,7 @@
 }
 .section-header {
   grid-area: header;
+  align-self: end;
 }
 	
 @media only screen and (max-width: 992px) {
