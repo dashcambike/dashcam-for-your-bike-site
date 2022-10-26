@@ -20,16 +20,8 @@
 }
 
 .headerBackground {
-	height: 115px;
+    height: 100%;
 	background-color: rgba($header-color, $header-transparency);
-}
-
-@media only screen and (max-width: 768px) {
-
-	.headerBackground {
-		height: 80px;
-	}
-
 }
 
 .subPageHeaderBackground {
@@ -42,14 +34,6 @@
 	max-width: $content-width;
 	padding-left: 15px;
 	padding-right: 15px;
-	grid-template-columns: repeat(12, 1fr);
-	grid-template-rows: 115px 876px auto auto;
-	grid-column-gap: 30px;
-	grid-template-areas: 
-		"h h h h h h h h h h h h"
-		"p p p p p i i i i i i i"
-		"c c c c c c c c c c c c"
-		"f f f f f f f f f f f f";
 }
 
 .subPageContainer {
@@ -57,32 +41,9 @@
 	background-color: #fff;
 }
 
-@media only screen and (max-width: 768px) {
-
-	.container {					// Set up the container for the site content
-		grid-template-rows: 80px 811px auto auto;
-	}
-}
-
-@media only screen and (max-width: 992px) {
-
-	.container {
-		grid-column-gap: 0px;
-		grid-template-columns: 1;
-		grid-template-rows: 115px auto auto auto auto;
-		grid-template-areas: 
-			"h h h h h h h h h h h h"
-			"i i i i i i i i i i i i"
-			"p p p p p p p p p p p p"
-			"c c c c c c c c c c c c"
-			"f f f f f f f f f f f f";
-	}
-}
-
 .page {
 	margin-top: 30px;
 	margin-bottom: 70px;
-	grid-column: 3/11;
 }
 
 @media only screen and (max-width: 768px) {
@@ -94,12 +55,6 @@
 	}
 	
 } 
-
-header {
-	grid-area: h;
-	display: flex;
-	margin-right: -15px;
-}
 
 .logo {
 	display: flex;
@@ -152,116 +107,136 @@ header {
 
 
 // Navigation Links
-.scroll {
-	display: flex;
-	width: 100%;
-	align-items: center;
-	justify-content: flex-end;
-
-	height: 115px;
-	//margin-left: 15px;
-
-	white-space: nowrap;
-	overflow-x: auto;
-	overflow-y: hidden;
-	-webkit-overflow-scrolling: touch;
-	-ms-overflow-style: -ms-autohiding-scrollbar;
+.header {
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: $content-width;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@media only screen and (max-width: 768px) {
-
-	.scroll {
-		height: 80px;
-		padding-top: 100px;
-		padding-bottom: 100px;
-		margin-top: -60px;
-		justify-content: flex-start;
-	}	
-	
-} 
-
-.scroll::-webkit-scrollbar {
-	display: none;
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
 }
 
-
-nav > ul {
-	color: #fff;
-	display: flex;
-	list-style-type: none;
-
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  text-decoration: none;
 }
 
-nav > ul li {
-	padding-left: 30px;
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: rgba(0,0,0,0.1);
 }
 
-@media only screen and (max-width: 768px) {
+/* menu */
 
-	nav > ul li {
-		padding-left: 20px;
-	}
-
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
-nav > ul li:first-child {
-	padding-left: 0px;
-	padding-left: 15px;
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+  margin-top: 10px;
 }
 
-nav > ul li:last-child {
-	padding-right: 15px;
+.header .menu-icon .navicon {
+  background-color: $main-text-color;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
 }
 
-nav > ul li a:link,
-nav > ul li a:visited {
-	text-decoration: none;
-	color: rgba($header-title-color, 0.6);
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background-color: $main-text-color;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
 }
 
-nav > ul li a:hover,
-nav > ul li a:active {
-	text-decoration: none;
-	color: rgba($header-title-color, 1);
+.header .menu-icon .navicon:before {
+  top: 5px;
 }
 
-
-
-// Sub Page Header Styling
-.subPageHeaderBackground .logo > p {
-	color: #000;
+.header .menu-icon .navicon:after {
+  top: -5px;
 }
 
-.subPageHeaderBackground nav > ul li a:link,
-.subPageHeaderBackground nav > ul li a:visited {
-	color: rgba(#000, 0.6);
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
 }
 
-.subPageHeaderBackground nav > ul li a:hover,
-.subPageHeaderBackground nav > ul li a:active {
-	color: rgba(#000, 1);
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+.header li a {
+  color: rgba(255,255,255,.6);
+}
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 5px 15px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
 }
 
 
 
 // App Title, Price, Description and Links
-
-.appInfo {
-	grid-area: i;
-	display: flex;
-	flex-wrap: wrap;
-	padding-top: 140px;
-	align-content: flex-start;
-}
-
-@media only screen and (max-width: 992px) {
-
-	.appInfo {
-		padding-top: 50px;
-		justify-content: center;
-	}
-
-} 
 
 .appIconShadow {
 	display: flex;
@@ -282,16 +257,6 @@ nav > ul li a:active {
 	align-items: start;
 	justify-content: center;
 	margin-left: 30px;
-}
-
-.appName {
-	color: $app-title-color;
-}
-
-.appPrice {
-	color: $app-price-color;
-	font-weight: normal;
-	margin-top: 13px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -323,10 +288,13 @@ nav > ul li a:active {
 	margin-top: 45px;
 	flex: 0 1 auto;
 	line-height: 1.5;
+    text-align: left;
 }
 
 .appDescription {
-	color: $app-description-color;
+    margin-top: 15px;
+    margin-bottom: 15px;
+	color: $main-text-color;
 }
 
 @media only screen and (max-width: 992px) {
@@ -380,15 +348,15 @@ nav > ul li a:active {
 }
 
 
-
 // iPhone Device Preview
 
 .iphonePreview {
-	grid-area: p;
 	background-image: url($device-color);
 	background-size: 400px auto;
 	background-repeat: no-repeat;
-	margin-top: 68px;
+    width: 400px;
+    height: 850px;
+    padding-top: 1px; // something weird happens with 0 padding: 1px shifts down like 15px
 }
 
 .iphoneScreen {
@@ -417,6 +385,8 @@ nav > ul li a:active {
 
 	.iphonePreview {
 		background-size: 370px auto;
+        width: 370px;
+        height: 786px;
 	}
 
 	.iphoneScreen {
@@ -440,7 +410,6 @@ nav > ul li a:active {
 } 
 
 @media only screen and (max-width: 992px) {
-
 	.iphonePreview {
 		display: flex;
 		background-size: 260px auto;
@@ -448,6 +417,8 @@ nav > ul li a:active {
 		margin-top: 47px;
 		justify-content: center;
 		padding-bottom: 75px;
+        width: 260px;
+        height: 552px;
 	}
 
 	.iphoneScreen {
@@ -470,42 +441,130 @@ nav > ul li a:active {
 		width: 226px;
 		height: 488px;
 	}
-	
-} 
+}
 
+/*** Main preview grid: the first thing they see on landing page ***/
+.previewgrid {
+  display: grid;
+  margin-top: 90px;
+  margin-bottom: 20px;
+  grid-template-areas:
+    'phone maininfo'
+    'phone secondaryinfo'
+    'phone stretchspace';
+  column-gap: 30px;
+}
+.previewgrid-phone {
+  grid-area: phone;
+  margin-left: auto;
+  margin-right: auto;
+}
+.previewgrid-maininfo {
+  align-self: start;
+  grid-area: maininfo;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.previewgrid-secondaryinfo {
+  align-self: start;
+  grid-area: secondaryinfo;
+}
+.previewgrid-stretchspace {
+  grid-area: stretchspace;
+  height: 250px;
+}
+@media only screen and (max-width: 992px) {
+    .previewgrid {
+      margin-top: 0px;
+      grid-template-areas:
+        'maininfo'
+        'phone'
+        'secondaryinfo'
+        'stretchspace';
+    }
+    .previewgrid maininfo {
+      padding-top: 0px;
+    }
+    .previewgrid-stretchspace {
+      display: none;
+    }
+}
+/*** end main preview grid ***/
 
-// Feature List
-
-.features {
-	grid-area: c;
-	display: flex;
-	flex: 0 1 auto;
-	align-content: flex-start;
-	justify-content: flex-start;
-	flex-grow: 1;
-	flex-wrap: wrap;
+/*** Sections: below the main preview ***/
+.section {
+	display: grid;
 	margin-top: 93px;
+    padding: 40px;
+    color: $main-text-color;
+    line-height: 1.7em;
+
+    column-gap: 30px;
 }
 
-.feature {
-	display: flex;
-	padding-top: 63px;
-	padding-left: 15px;
-	padding-right: 15px;
-	width: calc(100%/3);
+.section h1 {
+    font-size: 2em;
+    margin-bottom: .75em;
 }
 
-.feature:nth-child(-n+3) {
-    padding-top: 0px;   
+.section-leftimage {
+  grid-template-areas:
+    'photo header'
+    'photo info'
+}
+.section-rightimage {
+  grid-template-areas:
+    'header photo'
+    'info photo'
 }
 
-.feature:nth-child(3n) {
-	padding-right: 0px;
+.section p{
+    margin-top: 20px;
 }
 
-.feature:nth-child(3n+1) {
-	padding-left: 0px;
+.section img, .section video {
+  border:2px solid #fff;
+  -moz-box-shadow: 10px 10px 5px #ccc;
+  -webkit-box-shadow: 10px 10px 5px #ccc;
+  box-shadow: 5px 5px 5px #3f3f3f;
+  -moz-border-radius:15px;
+  -webkit-border-radius:15px;
+  border-radius:15px;
 }
+
+.section-photo {
+  grid-area: photo;
+}
+.section-info {
+  grid-area: info;
+  align-self: start;
+}
+.section-header {
+  grid-area: header;
+}
+	
+@media only screen and (max-width: 992px) {
+  .section {
+      margin-top: 50px;
+      padding: 20px;
+  }
+
+    .section-leftimage {
+      grid-template-areas:
+        'header'
+        'photo'
+        'info'
+    }
+    .section-rightimage {
+      grid-template-areas:
+        'header'
+        'photo'
+        'info'
+    }
+}
+
+/*** end sections ***/
 
 .iconBack {
 	color: $feature-icons-background-color;
@@ -523,96 +582,9 @@ nav > ul li a:active {
 	color: $social-icons-foreground-color;
 }
 
-.featureText {
-	margin-left: 18px;
-}
-
-.featureText > h3 {
-	color: $feature-title-color;
-}
-
-.featureText > p {
-	color: $feature-text-color;
-	margin-top: 8px;
-	line-height: 1.5;
-}
-
-@media only screen and (max-width: 992px) {
-
-	.features {
-		flex-grow: 1;
-		flex-direction: row;
-		flex-wrap: wrap;
-		margin-top: 11px;
-	}
-
-	.feature {
-		display: flex;
-		padding-top: 41px;
-		padding-left: 15px;
-		padding-right: 15px;
-		width: 100%;
-	}
-
-	.feature:nth-child(-n+3) {
-		padding-top: 41px;   
-	}
-
-	.feature:nth-child(1) {
-		padding-top: 0px;   
-	}
-
-	.feature:nth-child(3n) {
-		padding-right: 15px;
-	}
-	
-	.feature:nth-child(3n+1) {
-		padding-left: 15px;
-	}
-	
-}
-
-@media only screen and (max-width: 375px) {
-
-	.features {
-		flex-grow: 1;
-		flex-direction: row;
-		flex-wrap: wrap;
-		margin-top: 11px;
-	}
-
-	.feature {
-		display: flex;
-		padding-top: 41px;
-		padding-left: 0px;
-		padding-right: 0px;
-		width: 100%;
-	}
-
-	.feature:nth-child(-n+3) {
-		padding-top: 41px;   
-	}
-
-	.feature:nth-child(1) {
-		padding-top: 0px;   
-	}
-
-	.feature:nth-child(3n) {
-		padding-right: 0px;
-	}
-	
-	.feature:nth-child(3n+1) {
-		padding-left: 0px;
-	}
-	
-} 
-
-
-
 // Footer
 
 footer {
-	grid-area: f;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -689,4 +661,70 @@ footer {
 
 .hidden {
 	display: none;
+}
+
+#mc_embed_signup {
+    background:#ffffff25;
+    clear:left;
+    font:14px Helvetica,Arial,sans-serif;
+    margin-top:30px;
+    box-shadow: 5px 5px 5px black;
+    color: #f7f7f7;
+}
+#mc_embed_signup .button {
+    background-color: #000 !important;
+}
+
+.highlightedword {
+    color: $highlighted-text-color;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.panel p{
+  padding: 20px 18px;
+}
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 1em;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+#faqs {
+    margin-top: 30px;
+}
+
+#faqs h1 {
+    margin-bottom: 10px;
+    color: $main-text-color;
 }
