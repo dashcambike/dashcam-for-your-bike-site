@@ -708,6 +708,12 @@ footer {
 .panel p{
   padding: 20px 18px;
 }
+.panel p a {
+  color: #6833a6;
+}
+.panel p a:hover {
+  color: #6833a675;
+}
 .accordion:after {
   content: '\02795'; /* Unicode character for "plus" sign (+) */
   font-size: 1em;
