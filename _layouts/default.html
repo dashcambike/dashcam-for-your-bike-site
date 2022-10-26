@@ -9,8 +9,8 @@
                 <div class="container">
                     {% include header.html %}
 
-                    <div class="section">
-                        <div class="section-leftorright">
+                    <div class="previewgrid">
+                        <div class="previewgrid-phone">
                             <div class="iphonePreview">
                                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 0 0" style="position: absolute;">
                                     <clipPath id="screenMask" clipPathUnits="objectBoundingBox" transform="scale(0.00257, 0.00119)">
@@ -28,12 +28,15 @@
                                 {% include screencontent.html %}
                             </div>
                         </div>
-                        <div class="section-leftorright appInfo">
+                        <div class="previewgrid-maininfo">
                             <div class="appDescriptionContainer">
-                                <h1 class="appDescription">We turn your smartphone into a dashcam.</h1>
+                                <h1 class="appDescription">We turn your <span class="highlightedword">smartphone</span> into a <span class="highlightedword">dashcam</span>.</h1>
                                 <p class="appDescription">You already have a world-class camera in your pocket. Just mount it on your handlebars and ride.</p>
                             </div>
+
                             {% include downloadnow.html %}
+                        </div>
+                        <div class="previewgrid-secondaryinfo">
 
                             <!-- Begin Mailchimp Signup Form -->
                             <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7_dtp.css" rel="stylesheet" type="text/css">
@@ -57,53 +60,93 @@
                             
                             <!--End mc_embed_signup-->
                         </div>
+                        <div class="previewgrid-stretchspace">
+                        </div>
                     </div>
 
-                    <div class="section">
-                        <div class="section-leftorright">
+                    <div class="section section-leftimage">
+                        <div class="section-photo">
+                            <a href="https://twitter.com/dashcam311/status/1581333827666018306?s=20&t=y-mnhABrZQnILNMt2R7XuA">
+                                <img width="300px" alt="A bicyclist stuck between two trucks, caused by illegal parking in the bike lane" src="/assets/home/evidence.jpg" />
+                            </a>
+                        </div>
+                        <div class="section-header">
                             <h1>Video evidence, in case you need it</h1>
+                        </div>
+                        <div class="section-info">
+                            <p>
                             We hear too many stories of injured bicyclists being blamed for being hit by cars.
                             Have video evidence of your riding, in case you ever need it.
+                            </p>
+                            <p>
                             We hope you won't.
+                            </p>
                         </div>
-                        <div class="section-leftorright"><img width="300px" height="300px" alt="gif of person getting hit by a car on a bike - non-graphic"/></div>
                     </div>
 
-                    <div class="section">
-                        <div class="section-leftorright"><img width="500px" height="500px" alt="gif of the flyover view"/></div>
-                        <div class="section-leftorright">
+                    <div class="section section-rightimage">
+                        <div class="section-photo">
+                            <img src="assets/home/mounted.jpg" width="300px" alt="A phone mounted on bicycle handlebars"/>
+                        </div>
+                        <div class="section-header">
                             <h1>Hassle-free recording</h1>
-                            No worrying if your other cameras are charged.
-                            No sending huge files from a separate camera to your phone.
+                        </div>
+                        <div class="section-info">
+                            <p>
+                            No extra device to charge.
+                            No waiting for huge files to transfer.
+                            </p>
 
+                            <p>
                             When you record with your phone, all the data is stored right on your phone.
+                            Easy access, easy editing.
+                            </p>
                         </div>
                     </div>
 
-                    <div class="section">
-                        <div class="section-leftorright">
+                    <div class="section section-leftimage">
+                        <div class="section-photo">
+                            <a href="/maps">
+                                <img width="300px" alt="Screenshot of the Hazard Map" src="/assets/home/311map.jpg" />
+                            </a>
+                        </div>
+                        <div class="section-header">
                             <h1>Report everyday hazards</h1>
+                        </div>
+                        <div class="section-info">
+                            <p>
                             No more pulling over to make 311 reports.
                             Record everything, and when you reach your destination, select photos or videos to send your city.
+                            </p>
 
+                            <p>
                             In Pittsburgh, you can report to 311 in-app with <a href="/311" target="_blank">just a couple taps</a>.
+                            Your 311 reports are sent to the city, and you can also view them on our <a href="/maps">Hazard Map</a>
+                            </p>
                         </div>
-                        <div class="section-leftorright"><img width="300px" height="300px" alt="Image of either the hazard map or a 311 marker"/></div>
                     </div>
 
-                    <div class="section">
-                        <div class="section-leftorright"><img width="300px" height="300px" alt="gif of the flyover view"/></div>
-                        <div class="section-leftorright">
+                    <div class="section section-rightimage">
+                        <div class="section-photo">
+                              <img src="">
+                            <img width="300px" alt="Screenshot of the Hazard Map" src="/assets/home/flyover.webp" />
+                        </div>
+                        <div class="section-header">
                             <h1>Stop sharing boring videos</h1>
+                        </div>
+                        <div class="section-info">
+                            <p>
                             Our app creates flyover views of your rides, showing off the best moments of your ride at up to 32x speed.
+                            </p>
                         </div>
                     </div>
 
-
+                    {% include features.html %}
                     {% include footer.html %}
                     {% include appstoreimages.html %}
                 </div>
             </div>
         </div>
+        <script src="/assets/accordion.js"></script>
 </body>
 </html>

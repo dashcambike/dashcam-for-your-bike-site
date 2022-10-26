@@ -6,7 +6,6 @@ ios_app_country                           : us                                  
 
 appstore_link                             :                                           # Automatically populates if not set and if iOS app ID is set. Otherwise enter manually.
 playstore_link                            : https://play.google.com/store/apps/details?id=com.dashcambike.dashcamapp
-presskit_download_link                    :                                           # Enter a link to downloadable file or (e.g. public Dropbox link to a .zip file). 
                                                                                       # Or upload your press kit file to assets and set path accordingly (e.g. "assets/your_press_kit.zip").
 
 app_icon                                  : ./assets/icon.png                           # Automatically populates if not set and if iOS app ID is set.  Otherwise enter path to icon file manually.
@@ -21,7 +20,6 @@ enable_smart_app_banner                   : true                                
 # Information About Yourself
 your_name                                 : Dashcam for your Bike, Inc
 your_link                                 : https://www.linkedin.com/company/79463047/
-your_city                                 : Pittsburgh, PA
 email_address                             : hello@dashcam.bike
 facebook_username                         : Dashcam-for-your-Bike-App-112118611370858
 instagram_username                        : DashcamBike
@@ -38,46 +36,36 @@ tagline: Turn your smartphone into a dashcam
 description: Turn your smartphone into a dashcam. Capture cars blocking bike lanes and other daily hazards. Available on iOS, and now ready for beta testing on Android.
 
 
-# Feature List                            Edit, add or remove features to be presented.
-features                                  :
-  - title                                 : Super low-power
+# FAQs
+faqs                                      :
+  - title                                 : What's the battery life like?
     description                           : A 20-minute commute uses around 5% of your battery
     fontawesome_icon_name                 : battery-full
 
-  - title                                 : Gesture-based controls
-    description                           : Start and stop recording without looking at your phone
+  - title                                 : I can't see my screen.
+    description                           : Everything is controllable via gestures so you can start and stop recording without looking at your phone.
     fontawesome_icon_name                 : map-marked
 
-  - title                                 : Ride with Music
-    description                           : Compatible with Spotify, Podcasts, and more
+  - title                                 : Can I listen to music?
+    description                           : Yes, you can listen to music and podcasts. After launching the app, just tap Play to continue listening.
     fontawesome_icon_name                 : music
     
-  - title                                 : Records GPS tracks
-    description                           : So you can easily find events worth sharing
-    fontawesome_icon_name                 : map-marker-alt
-
-  - title                                 : Fast playback
-    description                           : Playback and export videos at up to 32x speed
-    fontawesome_icon_name                 : fast-forward
-
-  - title                                 : 3D Compilation Videos
-    description                           : Share to social media, or save videos to your phone
-    fontawesome_icon_name                 : share-alt
-  
-  - title                                 : Smart Storage
-    description                           : Automatically deletes oldest videos to save storage space
+  - title                                 : What is Smart Storage?
+    description                           : When you reach your storage limit, we overwrite the oldest footage. Your storage limit is customizable.
     fontawesome_icon_name                 : save
 
-  - title                                 : Fast 311 Reports
-    description                           : Share dangerous conditions with your city with a couple taps
+  - title                                 : How do I report hazards?
+    description                           : Share dangerous conditions with your city with a couple taps. See <a href="/311">instructions</a>.
     fontawesome_icon_name                 : flag
 
-  - title                                 : Video Editing
-    description                           : Simple video trimming features to just share the relevant moment
+  - title                                 : How do I make flyover vids?
+    description                           : Just hit Share, then Select Clips. Choose the clips you want to share. If you select multiple clips, we'll create a flyover transition between them.
     fontawesome_icon_name                 : video
 
 
 # Theme Settings
+main_text_color                           : "#e9e5eb"
+highlighted_text_color                    : "#c7a8eb"
 topbar_color                              : "#000000"
 topbar_transparency                       : 0.1
 topbar_title_color                        : "#ffffff"
@@ -92,14 +80,10 @@ body_background_color                     : "#ffffff"
 
 link_color                                : "#1d63ea"
 
-app_title_color                           : "#ffffff"
-app_price_color                           : "#ffffff"
-app_description_color                     : "#ffffff"
-
 feature_title_color                       : "#ffffff"
 feature_text_color                        : "#cfcfcf"
 
-feature_icons_foreground_color            : "#1d63ea"
+feature_icons_foreground_color            : "#6930b2"
 feature_icons_background_color            : "#e6e6e6"
 
 social_icons_foreground_color             : "#666666"
