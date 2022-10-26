@@ -17,6 +17,8 @@ The app is compatible with any phone mount that doesn't block the camera. Here a
 
 <a href="https://amzn.to/3Mr1DUl" target="_blank"><img border="0" src="/assets/mounts/toppick.jpg" alt="A diagonal mount that attaches to the phone at two corners"><br/>Buy on Amazon</a>
 
+NOTE: This mount is currently sold out. Please check out our other mounts until this one is back in-stock.
+
 This mount has a ton of metal components which make it feel very sturdy.
 It attaches at two corners, which reduces vibration in the dashcam footage.
 The ball mount gives a wide range of rotation, so you can rotate down to avoid getting your handlebars in the shot, then tilt up to look at your Maps App.
