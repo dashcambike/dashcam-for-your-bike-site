@@ -106,6 +106,25 @@
     white-space: nowrap;
 }
 
+.filter-date-toggle {
+    margin-top: 2em;
+}
+.filter-date-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.filter-date-label {
+    width: 50%;
+    text-align: right;
+    padding: 10px;
+}
+.filter-date-input {
+    width: 50%;
+    text-align: left;
+    padding: 10px;
+}
+
 /* Toggling filters */
 .filter-details {
     background-color: #111112;

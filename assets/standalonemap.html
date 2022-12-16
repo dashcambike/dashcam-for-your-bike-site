@@ -29,14 +29,40 @@
 
             <div class='filter-details' id='filter-details-hour'>
               <div>
-                  <input id='anytime' type='radio' name='singlehourmode' value='anytime' checked='checked'>
-                  <label for='anytime'>Anytime</label>
-                  <input id='specifichour' type='radio' name='singlehourmode' value='specifichour'>
-                  <label for='specifichour'>Specific Hour</label>
+                  <input id='filter-hour-off' type='radio' name='singlehourmode' value='anytime' checked='checked'>
+                  <label for='filter-hour-off'>Anytime</label>
+                  <input id='filter-hour-on' type='radio' name='singlehourmode' value='specifichour'>
+                  <label for='filter-hour-on'>Specific Hour</label>
               </div>
 
               <div>
                   <input id='timeslider' class='row' type='range' min='0' max='23' step='1' value='12' disabled />
+              </div>
+
+
+              <div class="filter-date-toggle" id="filter-details-range">
+                  <input id='filter-details-range-off' type='radio' name='doSelectRange' value='alldays' checked='checked'>
+                  <label for='filter-details-range-off'>All Days</label>
+
+                  <input id='filter-details-range-on' type='radio' name='doSelectRange' value='specificrange'>
+                  <label for='filter-details-range-on'>Specific Range</label>
+              </div>
+
+              <div class="filter-date-group">
+                  <div class="filter-date-label">
+                    <label for='startDate'>Start Date: </label>
+                  </div>
+                  <div class="filter-date-input">
+                    <input type="date" id="startDate" name="startDate" disabled>
+                  </div>
+              </div>
+              <div class="filter-date-group">
+                  <div class="filter-date-label">
+                    <label for='endDate'>End Date: </label>
+                  </div>
+                  <div class="filter-date-input">
+                    <input type="date" id="endDate" name="endDate" disabled>
+                  </div>
               </div>
             </div>
         </div>

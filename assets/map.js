@@ -1,3 +1,4 @@
+/*eslint no-undef: "error"*/
 /*
 Change to point to the Staging URL if needed.
 CDN helps JSONs load faster, automatically resizes images to reduce bandwidth, and costs less than hitting firebase endpoints.
@@ -45,12 +46,16 @@ const hazardTypes = {
   * Are we filtering by a specific hour or weekday/weekend?
   * If so, what?
   */
-let filteredHour = {
+let filteredTime = {
     'doSpecifyHour': false,
     'hourSpecified': -1,
 
     'doSpecifyDayOfWeek': false,
-    'dayOfWeekSpecified': "all" // or "weekend", or "weekday"
+    'dayOfWeekSpecified': "all", // or "weekend", or "weekday"
+
+    'doSelectRange': false,
+    'startDate': new Date(),
+    'endDate': new Date(),
 };
 
 /**
@@ -179,39 +184,54 @@ function getFilterForHazardTypeAndUpdateUI()
     return filters;
 }
 
-function getFilterForHourAndUpdateUI()
+function UpdateHeaderTextForFilteredDateTime()
+{
+    let text;
+    if (filteredTime.doSpecifyHour)
+    {
+        const hour = filteredTime.hourSpecified * 1; // convert to int?
+
+        // converting 0-23 hour to AMPM format
+        const ampm = hour >= 12 ? 'PM' : 'AM';
+        const hour12 = hour % 12 ? hour % 12 : 12;
+
+        text = "At " + hour12 + ampm;
+    }
+    else
+    {
+        text = "Any time"
+    }
+
+    if (filteredTime.doSelectRange)
+    {
+        text += " in range";
+    }
+
+    document.getElementById('active-hour').innerText = text;
+}
+
+function getFilterForTimeAndUpdateUI()
 {
     // Set slider interactivity
-    document.getElementById('timeslider').disabled = !filteredHour.doSpecifyHour;
+    document.getElementById('timeslider').disabled = !filteredTime.doSpecifyHour;
 
-    if (!filteredHour.doSpecifyHour)
+    if (!filteredTime.doSpecifyHour)
     {
-        document.getElementById('active-hour').innerText = "Any time";
         return null;
     }
 
-    const hour = filteredHour.hourSpecified * 1; // convert to int?
-
-    const filters = ['==', ['number', ['get', 'Hour']], hour];
-
-    // converting 0-23 hour to AMPM format
-    const ampm = hour >= 12 ? 'PM' : 'AM';
-    const hour12 = hour % 12 ? hour % 12 : 12;
-
-    // update text in the UI
-    document.getElementById('active-hour').innerText = "At " + hour12 + ampm;
-
-    return filters;
+    const hour = filteredTime.hourSpecified * 1; // convert to int?
+    return ['==', ['number', ['get', 'Hour']], hour];
 }
 
 function getFilterForDayOfWeek()
 {
-    if (!filteredHour.doSpecifyDayOfWeek)
+    if (!filteredTime.doSpecifyDayOfWeek)
     {
         return null;
     }
 
-    if (filteredHour.dayOfWeekSpecified == "weekend")
+    if (filteredTime.dayOfWeekSpecified == "weekend")
     {
         return ["any",
                     ['==', ['number', ['get', 'DayOfWeek']], 0],
@@ -227,12 +247,34 @@ function getFilterForDayOfWeek()
     }
 }
 
+function getFilterForRangeAndUpdateUI()
+{
+    // Set interactivity
+    document.getElementById('startDate').disabled = !filteredTime.doSelectRange;
+    document.getElementById('endDate').disabled = !filteredTime.doSelectRange;
+
+    if (!filteredTime.doSelectRange)
+    {
+        return null;
+    }
+
+    let startTimestamp = filteredTime.startDate;
+    let endTimestamp = filteredTime.endDate;
+
+    return ["all",
+                ['>=', ['number', ['get', 'Timestamp']], startTimestamp.getTime() / 1000],
+                ['<=', ['number', ['get', 'Timestamp']], endTimestamp.getTime() / 1000]
+            ];
+}
+
 function applyFilter(map) {
     let filters = [
         getFilterForHazardTypeAndUpdateUI(),
-        getFilterForHourAndUpdateUI(),
-        getFilterForDayOfWeek()
+        getFilterForTimeAndUpdateUI(),
+        getFilterForDayOfWeek(),
+        getFilterForRangeAndUpdateUI()
     ];
+    UpdateHeaderTextForFilteredDateTime();
 
     // Remove unneeded filters
     filters = filters.filter(f => f != null);
@@ -253,6 +295,40 @@ function applyFilter(map) {
 
     map.setFilter('hazards-point', finalFilter);
     map.setFilter('hazards-heatmap', finalFilter);
+}
+
+// doChangeStartDateIfInvalidRange: true means the start date will move if the range is invalid;
+//                                  false means the end date will move.
+function makeDateRangeValidAndSetFilteredTime(doChangeStartDateIfInvalidRange)
+{
+    const startDate = document.getElementById('startDate');
+    const endDate = document.getElementById('endDate');
+    if (!endDate.value)
+    {
+        endDate.valueAsDate = new Date();
+    }
+    if (!startDate.value)
+    {
+        startDate.valueAsDate = new Date();
+    }
+    if (startDate.value >= endDate.value)
+    {
+        if (doChangeStartDateIfInvalidRange)
+        {
+            const fixedDate = new Date(endDate.valueAsDate);
+            fixedDate.setDate(endDate.valueAsDate.getDate() - 7);
+            startDate.valueAsDate = fixedDate;
+        }
+        else
+        {
+            const fixedDate = new Date(startDate.valueAsDate);
+            fixedDate.setDate(startDate.valueAsDate.getDate() + 7);
+            endDate.valueAsDate = fixedDate;
+        }
+    }
+
+    filteredTime.startDate = startDate.valueAsDate;
+    filteredTime.endDate = endDate.valueAsDate;
 }
 
 function buildMap() {
@@ -416,7 +492,7 @@ function buildMap() {
 
         // Handle Hour slider
         document.getElementById('timeslider').addEventListener('input', (event) => {
-            filteredHour.hourSpecified = event.target.value;
+            filteredTime.hourSpecified = event.target.value;
             applyFilter(map);
         });
 
@@ -428,18 +504,44 @@ function buildMap() {
                 // event is a mouse up or something
                 return;
             }
-            filteredHour.doSpecifyHour = useSingleHour == 'specifichour'
-            filteredHour.hourSpecified = document.getElementById('timeslider').value;
+            filteredTime.doSpecifyHour = useSingleHour == 'specifichour'
+            filteredTime.hourSpecified = document.getElementById('timeslider').value;
+            applyFilter(map);
+        });
+
+        // Handle Range enable/disable toggle
+        document.getElementById('filter-details-range').addEventListener('change', (event) => {
+            const useRange = event.target.value;
+            if (useRange != 'alldays' && useRange != 'specificrange')
+            {
+                // event is a mouse up or something
+                return;
+            }
+            filteredTime.doSelectRange = useRange == 'specificrange'
+
+            makeDateRangeValidAndSetFilteredTime();
+            applyFilter(map);
+        });
+        
+        // Handle range start date
+        document.getElementById('startDate').addEventListener('change', (event) => {
+            makeDateRangeValidAndSetFilteredTime(false);
+            applyFilter(map);
+        });
+
+        // Handle range end date
+        document.getElementById('endDate').addEventListener('change', (event) => {
+            makeDateRangeValidAndSetFilteredTime(true);
             applyFilter(map);
         });
 
         // Handle Day of Week toggle
         document.getElementById('filter-details-day-of-week').addEventListener('change', (event) => {
             const day = event.target.value;
-            filteredHour.doSpecifyDayOfWeek = day != 'all';
-            filteredHour.dayOfWeekSpecified = day;
+            filteredTime.doSpecifyDayOfWeek = day != 'all';
+            filteredTime.dayOfWeekSpecified = day;
 
-            if (!filteredHour.doSpecifyDayOfWeek)
+            if (!filteredTime.doSpecifyDayOfWeek)
             {
                 text = "Any day of week";
             }
