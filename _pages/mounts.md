@@ -5,61 +5,94 @@ include_in_header: true
 order: 2
 ---
 
-# Recommended Mounts for the Dashcam App
-Dashcam for your Bike turns your smartphone into a dashcam.
-The app has gesture-based controls so you don't have to take your eyes off the road, screen-dimming to save you battery life, direct-to-311 reporting in certain cities, and easy creation of compilation videos.
+# Our Best Mount
+Our phone mount has been tested for thousands of hours, and creates the most stable footage of any mount we've tried.
+It is compatible with all phone cases under 0.5" thick, and works with removable PopSockets.
 
-{% include downloadnow.html %}
+<center>
+<a href="https://amzn.to/3QqCVoU" target="_blank">
+    <img class="amznLink" src="/assets/mounts/ourmount.jpg" alt="A Dashcam-branded mount with a claw design">
+    <br/>
+    <button class="buyAmazonButton bigButton">Show now at Amazon.com</button>
+</a>
+</center>
 
-The app is compatible with any phone mount that doesn't block the camera. Here are our favorites.
+While Dashcam for your Bike is compatible with a wide range of mounts, our branded mount works better than anything else we've tested.
+It's secure, easy to install, and has a wide tilt angle so you can easily tilt your phone up to glance at Maps, then back down to continue recording.
 
-## Our Top Pick
+## What's important in a mount?
 
-<a href="https://www.amazon.com/dp/B0B2LRWG4C?th=1&linkCode=li3&tag=dashcambike-20&linkId=bd8c533db26c410f1e8b6a9b8283ae22&language=en_US&ref_=as_li_ss_il" target="_blank"><img border="0" src="/assets/mounts/quickrelease.jpg" alt="A plastic mount with a quick-release button"><br/>Buy on Amazon</a>
-
-The ball mount makes it easy to rotate for both portrait and landscape mode, and you can tilt up to look at your phone (e.g. to check Maps), then continue recording.
-
-The locking mechanism makes it very fast to get your phone in and out, and to adjust to different sizes of phones.
-
-Since there are two connector sizes included, it fits nearly all bicycles. It can easily go around both cables and grip tape. It fits a wide range of phones - every phone we've tested on fits easily.
-
-# What's important in a mount?
-
-* **No Straps**: We no longer recommend mounts that you have to "strap" into your phone.  These make it hard to attach and detach your phone, and they often block the camera.
-* **Easy Installation**: All our mounts are easy to install. Some require no tools, others require just a hex key.
+* **No Straps**: Straps make it hard to attach and detach your phone, and they often block the camera.
+* **No Quick-Release**: Quick-release mounts come loose too frequently. We recommend mounts that attach securely with a hex key.
 * **Doesn't block camera**: The app always records with the widest-angle lens you have, so make sure the mount doesn't block that camera.
 
-## Alternative: All-Metal Mount
-<a href="https://www.amazon.com/GUB-Motorcycle-Aluminum-Rotation-Adjustable/dp/B07GKT8FBZ/ref=as_li_ss_il?_encoding=UTF8&pd_rd_w=WExxg&pf_rd_p=8b894231-4b84-44da-9446-c27cf0e8abc2&pf_rd_r=7S1SWGQFBXTEPWW6EA5G&pd_rd_r=138ae756-baa5-4b60-8632-c877df877f25&pd_rd_wg=ay0Gv&ref_=nav_youraccount_switchacct&linkCode=li2&tag=robotarmin0c-20&linkId=5b70f71a6ec74f1b2eb5f659cf6b5e1d&language=en_US" target="_blank" alt="A non-swiveling mount that is made of 100% metal components"><img border="0" src="/assets/mounts/allmetal.jpg" ><br/>Buy on Amazon</a>
+## A note on PopSockets
+All mounts we recommend are compatible with Swappable PopSockets - but you will need to remove the PopSocket for your phone to fit.
+You can buy a <a href="https://amzn.to/3q7fG7D">Swappable PopSocket on Amazon</a> for $10 to $15.
+
+# Alternatives
+If the above mount doesn't work for your case, we have some alternatives.
+We have tested each of these for around 100 hours, but we have not tested them as thoroughly as our Dashcam-branded mount.
+
+## #1: Quick-Release Mount
+
+<a class="amznLeftLink" href="https://amzn.to/3CDNOOK" target="_blank">
+    <img class="amznLink" src="/assets/mounts/quickrelease.jpg" alt="A plastic mount with a quick-release button">
+    <br/>
+    <button class="buyAmazonButton littleButton">Show now at Amazon.com</button>
+</a>
+
+This mount has slightly more limited motion than our top pick, but in exchange it's faster to get your phone in and out of the mount - meaning you can easily remove the phone while riding.
+
+It can easily rotate to be horizontal and vertical, and installs quickly which makes it easy to move it between bikes.
+
+The footage is shakier than our top pick, and the mount can sometimes slide on the handlebars, causing the phone to rotate and record the sky.
+<div class="clearLeftFloat"></div>
+
+## #2: All-Metal Mount
+<a class="amznLeftLink"  href="https://amzn.to/3QuxPYR" target="_blank" alt="A non-swiveling mount that is made of 100% metal components">
+    <img class="amznLink" src="/assets/mounts/allmetal.jpg" >
+    <br/>
+    <button class="buyAmazonButton littleButton">Show now at Amazon.com</button>
+</a>
 
 If you're afraid of plastic components, consider this All-Metal Mount.
 The downside: **this mount does not swivel**, meaning you cannot tilt it to view Google Maps.
 
 Note that we've tested our recommended mounts for thousands of hours without issue, and ridden on both streets, gravel, and cobblestone with them.
-
-## A note on PopSockets
-All of these mounts are compatible with Swappable PopSockets - but you will need to remove the PopSocket for your phone to fit.
-You can buy a <a href="https://amzn.to/3q7fG7D">Swappable PopSocket on Amazon</a> for $10 to $15.
+<div class="clearLeftFloat"></div>
 
 # Mounts to avoid
 
 We've tested a ton of mounts, some more than others. Here are some mounts we think you should avoid buying for the Dashcam App - though they may be great mounts in other settings.
 
 ## Do not buy #1: PopMount 2
-<a href="https://www.amazon.com/PopSockets-PopMount-Ride-Scooter-Bicycle/dp/B08P4XJVPL/ref=as_li_ss_il?dchild=1&keywords=pop+mount+2+bike&qid=1633807572&sr=8-1&linkCode=li2&tag=robotarmin0c-20&linkId=687a8bac46954f6a2c12754cb694a5f3&language=en_US" target="_blank"><img border="0" src="/assets/mounts/popsocket.jpg"  alt="PopSocket PopMount 2"></a>
+<a class="amznLeftLink" href="https://amzn.to/3k1TOKA" target="_blank">
+    <img class="amznLink" src="/assets/mounts/popsocket.jpg"  alt="PopSocket PopMount 2">
+</a>
 
 We had this mount break on us - after several months of near-daily use, it snapped.
 Looking at the damage, it looks like it was designed mostly with plastic with a thin metal screw - a design that would probably be fine if you used the mount for Google Maps, but isn't strong enough to support the phone as a dashcam.
 
 If you do buy this mount, be aware that the strap blocks the camera.
 One way to get around that problem is to pull the strap even further until you hang the phone on the secod hook, which gets you a video that [looks like this](https://twitter.com/DashcamBike/status/1448636353948880900?s=20).
+<div class="clearLeftFloat"></div>
 
 
 ## Do not buy #2: Camera-Blocking Mounts
-<a href="https://amzn.to/39GkP0Y" target="_blank"><img border="0" src="/assets/mounts/camerablocking.jpg" alt="Mount that would block the camera"></a>
+<a class="amznLeftLink" href="https://amzn.to/39GkP0Y" target="_blank">
+    <img class="amznLink" src="/assets/mounts/camerablocking.jpg" alt="Mount that would block the camera">
+</a>
 
 There are several mounts with this design - all that we've tested block the third camera on an iPhone with 3 lenses.
 It might be okay with a two-lens design, and we love how easy it is to get your phone in and out, but it wasn't worth the trade-off to us.
+<div class="clearLeftFloat"></div>
+
+# What is Dashcam for your Bike?
+Dashcam for your Bike is an app that turns your smartphone into a dashcam.
+The app has gesture-based controls so you don't have to take your eyes off the road, screen-dimming to save you battery life, direct-to-311 reporting in certain cities, and easy creation of compilation videos.
+
+{% include downloadnow.html %}
 
 <hr/>
 <small>
