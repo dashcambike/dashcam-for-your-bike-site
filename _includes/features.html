@@ -9,7 +9,13 @@
             {{ faq.title }}
         </button>
         <div class="panel">
-            <p>{{ faq.description }}</p>
+            {% for paragraph in faq.description %}
+                <p>
+                    {% if forloop.index0 == 0 %}<b> {% endif %}
+                        {{ paragraph }}
+                    {% if forloop.index0 == 0 %}</b> {% endif %}
+                </p>
+            {% endfor %}
         </div>
     {% endfor %}
 </div>

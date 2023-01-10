@@ -38,34 +38,91 @@ description: Turn your smartphone into a dashcam. Capture cars blocking bike lan
 
 # FAQs
 faqs                                      :
-  - title                                 : What's the battery life like?
-    description                           : A 20-minute commute uses around 5% of your battery
+  - title                                 : How much battery does the app use?
+    description                           : 
+      - A 20-minute commute uses around 5% of your battery.
+      - We’ve worked hard to make sure the app doesn’t drain your battery. Some features, such as cinematic stabilization (available on iPhones), use a little bit more.
+      - Note that streaming music will use a lot of battery, regardless of whether you are using Dashcam or not. We recommend you avoid streaming music while riding. Spotify, Youtube Music, and other apps all allow you to download music offline. Playing already-downloaded music will be more efficient.
     fontawesome_icon_name                 : battery-full
 
-  - title                                 : I can't see my screen.
-    description                           : Everything is controllable via gestures so you can start and stop recording without looking at your phone.
-    fontawesome_icon_name                 : map-marked
+  - title                                 : How do you keep my data private?
+    description                           :
+      - Your videos and GPS data are always private.
+      - They are never uploaded to our servers unless you expressly choose to share them. We only collect basic, non-identifiable metadata for analytics and crash reporting to improve our app. <a href="/privacy">Read our privacy policy</a>.
+    fontawesome_icon_name                 : shield-alt
 
-  - title                                 : Can I listen to music?
-    description                           : Yes, you can listen to music and podcasts. After launching the app, just tap Play to continue listening.
-    fontawesome_icon_name                 : music
+  - title                                 : How do I keep my phone safe?
+    description                           :
+      - Secure, Lock, and Verify.
+      - When using <a href="/mounts">our recommended mount</a>, make sure you secure the corners in place by pulling in, locking using the button on the back, and verifying it's secure by giving it a twist.
+      - Regularly check all connections on your mount, making sure it remains secure. The staff at Dashcam for your Bike have personally tested our recommended mounts for hundreds of hours, and we trust them well enough for our own phones.
+      - Only use your phone in the rain if you have a waterproof device.
+    fontawesome_icon_name                 : umbrella
     
-  - title                                 : What is Smart Storage?
-    description                           : When you reach your storage limit, we overwrite the oldest footage. Your storage limit is customizable.
-    fontawesome_icon_name                 : save
+
+  - title                                 : When can I use the app?
+    description                           :
+      - Record every commute!
+      - We recommend opening the app on every ride around town. You can leave it on standby to save battery power.
+      - While we take extensive steps to prevent damage to your phone's camera by locking moving parts in place, we still don't recommend using our app while mountain biking or any other riding that could cause severe impacts or drastic vibrations.
+    fontawesome_icon_name                 : clock
+
+  - title                                 : Can I play music while riding?
+    description                           :
+      - Yes!
+      - When you first launch the app, your music may pause. When this happens, just return to your music player and hit play again. Then go back to the app and tap the record button. You’ll be able to record while your music plays.
+      - The app is compatible with both music and podcasts, and with both headphones and speakers.
+    fontawesome_icon_name                 : music
+
+  - title                                 : Can I use my maps while riding?
+    description                           :
+      - Yes!
+      - The phone mounts we recommend are designed to tilt upward so you can switch apps, check maps, then switch back to the Dashcam. Note that we will not be recording when you are switched to another app.
+    fontawesome_icon_name                 : map
+
+  - title                                 : How do I find my ride's highlights?
+    description                           :
+      - Tap to place a Marker while riding. You can easily find that marker later.
+      - When you’re out riding and something happens that you want to share, place a marker. All you have to do is tap the screen while it’s recording. When you reach your destination, every tap will be visible as a purple marker in the timeline.
+    fontawesome_icon_name                 : map-marker-alt
+
+  - title                                 : What happens if I can’t see my screen while recording?
+    description                           :
+      - You don't need to see the screen to use the app.
+      - Everything is controllable via gestures so you can start and stop recording without looking at your phone.
+      - The app automatically enters Low Power Mode when you begin recording, or after 10 seconds of inactivity.
+    fontawesome_icon_name                 : eye-slash
+    
+  - title                                 : Do I have to manually delete old videos?
+    description                           :
+      - Nope!
+      - The app will automatically delete old videos for you. Go into your settings to customize how much video is stored. Once you reach this threshold, new footage will automatically overwrite the oldest footage.
+    fontawesome_icon_name                 : trash
+    
+  - title                                 : How do you make those cool 3D flyover videos?
+    description                           :
+      - Our app does it for you.
+      - Just hit Share > Select Clips and select multiple clips. The app will create a flyover video between each of the clips you selected. If you share it on social media, tag <a href="https://twitter.com/dashcambike">@dashcambike</a>.
+    fontawesome_icon_name                 : dove
 
   - title                                 : How do I report hazards?
-    description                           : Share dangerous conditions with your city with a couple taps. See <a href="/311">instructions</a>.
+    description                           :
+      - Share dangerous conditions with your city with a couple taps. See .
+      - Scrub to the moment you want to share and tap the Share button. In cities with in-app 311 reporting, a button will appear to report directly to 311. You can find <a href="/311">detailed 311 instructions here</a>.
+      - If your city does not have a Report to 311 button, just hit “Screenshot & GPS Coordinates”. Use your city’s 311 reporting mechanism (it may be an app, a website, or actually calling 311) and provide them the screenshot and GPS coordinates.
+
     fontawesome_icon_name                 : flag
 
-  - title                                 : How do I make flyover vids?
-    description                           : Just hit Share, then Select Clips. Choose the clips you want to share. If you select multiple clips, we'll create a flyover transition between them.
-    fontawesome_icon_name                 : video
+  - title                                 : When is in-app 311 reporting coming to my city?
+    description                           :
+      - Ask your local bike/ped org to get in touch!
+      - You can also <a href="https://docs.google.com/forms/d/1aRcv5QRWSCjXj5o7L1jGr4_jtM3SEcvBRJiICHYJG7s/edit#responses">fill out our form</a>.
+    fontawesome_icon_name                 : radiation-alt
 
 
 # Theme Settings
-main_text_color                           : "#e9e5eb"
-highlighted_text_color                    : "#c7a8eb"
+main_text_color                           : "#eceeee"
+highlighted_text_color                    : "#01a9ff"
 topbar_color                              : "#000000"
 topbar_transparency                       : 0.1
 topbar_title_color                        : "#ffffff"
@@ -83,7 +140,7 @@ link_color                                : "#1d63ea"
 feature_title_color                       : "#ffffff"
 feature_text_color                        : "#cfcfcf"
 
-feature_icons_foreground_color            : "#6930b2"
+feature_icons_foreground_color            : "#0076b1"
 feature_icons_background_color            : "#e6e6e6"
 
 social_icons_foreground_color             : "#666666"

@@ -592,6 +592,12 @@ function buildMap() {
     map.on('mouseleave', 'hazards-point', () => {
         map.getCanvas().style.cursor = '';
     });
+
+    // Uncomment to debug and count number of visible points.
+    // map.on('render', function() {
+    //    const filteredcount = map.queryRenderedFeatures({ layers: ['hazards-point'] }).length;
+    //    console.log("Current filter includes this many items: ", filteredcount)
+    // });
 }
 
 function toggleFilter(myDivSuffix) {
