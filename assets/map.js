@@ -63,6 +63,13 @@ let filteredTime = {
   */
 let lastOpenedPopup = null;
 
+/**
+  * A timer to be triggered 1 second after user stops typing, but before they blur,
+  * in case they type a new date in the Start/End date filters and then pause on that
+  * date expecting an update.
+  */
+let doneTyping = null;
+
 function fixPopupPositionAfterLoad()
 {
     if (lastOpenedPopup == null)
@@ -356,7 +363,7 @@ function buildMap() {
         map.addSource('hazards', {
             'type': 'geojson',
             //'data': '/assets/hazardreports.geojson',
-            'data': cdnUrl + 'GeoJsons%2Fpittsburgh.geojson?alt=media&utcHourForCacheControl=' + currentUTCHourForCacheControl,
+            'data': cdnUrl + 'AggregatedHazards%2Fpittsburgh.geojson?alt=media&utcHourForCacheControl=' + currentUTCHourForCacheControl,
             cluster: false,
             clusterMaxZoom: 14, // Max zoom to cluster points on
             clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
@@ -519,20 +526,47 @@ function buildMap() {
             }
             filteredTime.doSelectRange = useRange == 'specificrange'
 
-            makeDateRangeValidAndSetFilteredTime();
-            applyFilter(map);
-        });
-        
-        // Handle range start date
-        document.getElementById('startDate').addEventListener('change', (event) => {
-            makeDateRangeValidAndSetFilteredTime(false);
+            makeDateRangeValidAndSetFilteredTime(true);
             applyFilter(map);
         });
 
-        // Handle range end date
-        document.getElementById('endDate').addEventListener('change', (event) => {
-            makeDateRangeValidAndSetFilteredTime(true);
+        /**
+         *  The function to run when user stops inputting a date.
+         *  We either wait for a blur event, or we wait 3 seconds from the last keystroke.
+         */
+        function updateOnDoneTyping(doChangeStartDateIfInvalidRange) {
+            makeDateRangeValidAndSetFilteredTime(doChangeStartDateIfInvalidRange);
             applyFilter(map);
+        }
+        function updateOnDoneTypingStartDate() {
+            updateOnDoneTyping(false);
+        }
+        function updateOnDoneTypingEndDate() {
+            updateOnDoneTyping(true);
+        }
+        
+        // Handle range start date: change event waits 1 second before updating
+        document.getElementById('startDate').addEventListener('change', (event) => {
+            clearTimeout(doneTyping);
+            doneTyping = setTimeout(updateOnDoneTypingStartDate, 1000);
+        });
+
+        // Handle range start date: blur event is instantaneous
+        document.getElementById('startDate').addEventListener('blur', (event) => {
+            clearTimeout(doneTyping);
+            updateOnDoneTypingStartDate();
+        });
+
+        // Handle range end date: change event waits 1 second before updating
+        document.getElementById('endDate').addEventListener('change', (event) => {
+            clearTimeout(doneTyping);
+            doneTyping = setTimeout(updateOnDoneTypingEndDate, 1000);
+        });
+
+        // Handle range end date: blur event is instantaneous
+        document.getElementById('endDate').addEventListener('blur', (event) => {
+            clearTimeout(doneTyping);
+            updateOnDoneTypingEndDate();
         });
 
         // Handle Day of Week toggle
