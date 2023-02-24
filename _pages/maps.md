@@ -1,9 +1,9 @@
 ---
 layout: page
-title: 311 Hazard Map
-fulltitle: Hazard Report Map, Pittsburgh Pennsylvania
+title: 311 Map
+fulltitle: 311 Hazard Report Map, Pittsburgh Pennsylvania
 include_in_header: true
-include_in_footer: false
+include_in_footer: true
 image: assets/map.png
 order: 3
 ---

@@ -189,6 +189,8 @@
   position: relative;
   user-select: none;
   margin-top: 10px;
+  flex-grow: 100;
+  transition: all .2s ease-out;
 }
 
 .header .menu-icon .navicon {
@@ -227,6 +229,7 @@
 
 .header .menu-btn:checked ~ .menu {
   max-height: 240px;
+  flex-grow: 100
 }
 
 .header .menu-btn:checked ~ .menu-icon .navicon {
@@ -248,6 +251,11 @@
 .header li a {
   color: rgba(255,255,255,.6);
 }
+
+.menu-btn:checked ~ .menu-icon {
+  flex-grow: 0
+}
+
 
 /* 48em = 768px */
 
@@ -646,16 +654,21 @@ footer {
 	display: flex;
 	text-align: center;
 	padding-bottom: 70px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .footerLinks a {
-	margin-right: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+    padding-left: 30px;
+    padding-bottom: 15px;
+    border-radius: 10px;
 }
-
-.footerLinks a:last-child {
-	margin-right: 0px;
+.footerLinks a:hover {
+    background: #ffffff25
 }
-
 
 @media only screen and (max-width: 768px) {
 

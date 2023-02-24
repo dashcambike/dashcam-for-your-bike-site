@@ -1,7 +1,9 @@
 ---
 layout: page
-title: Request 311 connection in your city
+title: 311 Request Form
+fulltitle: Request 311 connection in your city
 include_in_header: false
+include_in_footer: true
 order: 4
 ---
 
