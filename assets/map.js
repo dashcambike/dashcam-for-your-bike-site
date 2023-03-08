@@ -17,27 +17,32 @@ const hazardTypes = {
         hazardIcon: 'car-15',
         hazardColor: "rgb(123, 0, 48)",
         isVisible: true,
+        otherNames: ["Cars parked in bike lane"],
     },
     "Obstruction in bike lane": {
         hazardIcon: 'information-15',
         hazardColor: "rgb(54, 0, 123)",
         isVisible: true,
+        otherNames: [],
     },
-    "Dangerous driving": {
+    "Close call or collision": {
         hazardIcon: 'fire-station-15',
         hazardColor: "rgb(189, 0, 78)",
         isVisible: true,
+        otherNames: ["Dangerous driving"],
     },
     "Pothole": {
         hazardIcon: 'information-15',
         hazardColor: "rgb(33, 83, 65)",
         isVisible: true,
+        otherNames: [],
     },
     "Other": {
         /* also used for clusters */ 
         hazardIcon: 'information-15',
         hazardColor: "rgb(123, 0, 48)",
         isVisible: true,
+        otherNames: [],
     }
 };
 
@@ -161,12 +166,12 @@ function getFilterForHazardTypeAndUpdateUI()
         if (!isOtherVisible && hazardTypeData.isVisible)
         {
             // If other is hidden, search only for those equal to the visible hazards
-            filters.push(['==', ['string', ['get', 'HazardName']], hazardName]);
+            filters.push(['in', ['string', ['get', 'HazardName']], ["literal", hazardTypeData.otherNames.concat(hazardName)]]);
         }
         else if (isOtherVisible && !hazardTypeData.isVisible)
         {
             // If other is shown, remove anything not matching unchecked types
-            filters.push(['!=', ['string', ['get', 'HazardName']], hazardName]);
+            filters.push(["!", ['in', ['string', ['get', 'HazardName']], ["literal", hazardTypeData.otherNames.concat(hazardName)]]]);
         }
     }
 
@@ -430,11 +435,14 @@ function buildMap() {
         let iconPaintProps = [ 'match', ['get', 'HazardName'] ];
         for (const [hazardName, hazardTypeData] of Object.entries(hazardTypes)) {
             if (hazardName == "Other") continue;
-            iconLayoutProps.push(hazardName);
-            iconLayoutProps.push(hazardTypeData.hazardIcon);
+            for (const name of hazardTypeData.otherNames.concat([hazardName]))
+            {
+                iconLayoutProps.push(name);
+                iconLayoutProps.push(hazardTypeData.hazardIcon);
 
-            iconPaintProps.push(hazardName);
-            iconPaintProps.push(hazardTypeData.hazardColor);
+                iconPaintProps.push(name);
+                iconPaintProps.push(hazardTypeData.hazardColor);
+            }
         }
         iconLayoutProps.push(hazardTypes['Other'].hazardIcon);
         iconPaintProps.push(hazardTypes['Other'].hazardColor);

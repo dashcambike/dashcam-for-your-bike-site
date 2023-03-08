@@ -29,7 +29,11 @@
       {% assign sorted_pages = site.pages | sort:"order" %}
 	  {% for page in sorted_pages  %}
 	  	{% if page.include_in_header == true %}
-            <li><a href="{{ page.override_url || page.url | relative_url }}" target="_self">{{ page.title }}</a></li>
+            {% if page.override_url %}
+                <li><a href="{{ page.override_url }}" target="_self">{{ page.title }}</a></li>
+            {% else %}
+                <li><a href="{{ page.url | relative_url }}" target="_self">{{ page.title }}</a></li>
+            {% endif %}
 	  	{% endif %}
 	  {% endfor %}
   </ul>
