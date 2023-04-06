@@ -600,29 +600,7 @@ function buildMap() {
     // When a click event occurs on a feature in the places layer, open a popup at the
     // location of the feature, with description HTML from its properties.
     map.on('click', 'hazards-point', (e) => {
-        // Copy coordinates array.
-        const coordinates = e.features[0].geometry.coordinates.slice();
-        const description = getDescriptionFor(e.features[0].properties);
-         
-        // Ensure that if the map is zoomed out such that multiple
-        // copies of the feature are visible, the popup appears
-        // over the copy being pointed to.
-        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-        }
-         
-        const options = {}
-        if (Math.min(window.screen.width, window.screen.height) < 768)
-        {
-            // Center the map on mobile / small screens to ensure popup is visible
-            const verticalShift = window.innerHeight * 0.1;
-            map.flyTo({center: coordinates, padding: {top: 0, bottom:0, left: 0, right: 0}});
-            options['anchor'] = 'center';
-        }
-        lastOpenedPopup = new mapboxgl.Popup(options)
-            .setLngLat(coordinates)
-            .setHTML(description)
-            .addTo(map);
+        popup(e.features[0].properties.ImageOrVideoFilepath, e.lngLat);
     });
          
     // Change the cursor to a pointer when the mouse is over the places layer.
@@ -640,6 +618,8 @@ function buildMap() {
     //    const filteredcount = map.queryRenderedFeatures({ layers: ['hazards-point'] }).length;
     //    console.log("Current filter includes this many items: ", filteredcount)
     // });
+
+    return map;
 }
 
 function toggleFilter(myDivSuffix) {
@@ -665,4 +645,66 @@ function toggleFilter(myDivSuffix) {
     }
 }
 
-buildMap();
+function popup(imageUrl, optionalClickLocation) {
+  const features = map.querySourceFeatures('hazards', {
+      sourceLayer: 'hazards-point',
+      filter: ["in", imageUrl,  ['string', ['get', "ImageOrVideoFilepath"]]]
+  });
+  const feature = features[0];
+
+  // Copy coordinates array.
+  const coordinates = feature.geometry.coordinates.slice();
+  const description = getDescriptionFor(feature.properties);
+   
+  // Ensure that if the map is zoomed out such that multiple
+  // copies of the feature are visible, the popup appears
+  // over the copy being pointed to.
+  if (optionalClickLocation) {
+    while (Math.abs(optionalClickLocation.lng - coordinates[0]) > 180) {
+      coordinates[0] += optionalClickLocation.lng > coordinates[0] ? 360 : -360;
+    }
+  }
+   
+  const options = {}
+  if (Math.min(window.screen.width, window.screen.height) < 768)
+  {
+      // Center the map on mobile / small screens to ensure popup is visible
+      const verticalShift = window.innerHeight * 0.1;
+      map.flyTo({center: coordinates, padding: {top: 0, bottom:0, left: 0, right: 0}});
+      options['anchor'] = 'center';
+  }
+  lastOpenedPopup = new mapboxgl.Popup(options)
+      .setLngLat(coordinates)
+      .setHTML(description)
+      .addTo(map);
+  
+  if (window.parent) {
+    const parts = imageUrl.split("%2F");
+    const filename = parts[parts.length-1];
+    window.parent.history.replaceState({}, "", window.parent.location.pathname + "?reportId=" + filename);
+  }
+}
+
+let hasFirstIdleFired = false;
+function loadPopupFromGet() {
+  if (hasFirstIdleFired) {
+    return;
+  }
+
+  hasFirstIdleFired = true;
+
+  if (!window.parent) {
+    return;
+  }
+
+  const searchUrl = window.parent.location.search;
+  const searchUrlSplit = searchUrl.split('=');
+  if (searchUrlSplit[0] == '?reportId') {
+    // Hacky -- only supports one parameter, but that's fine for now.
+    // Note: we DO want the encoded URL string
+    popup(searchUrlSplit[1], null);
+  }
+}
+
+const map = buildMap();
+map.on('idle', loadPopupFromGet);
