@@ -104,13 +104,14 @@ Copyright (c) 1991-1997 Silicon Graphics, Inc.
 ## sounds
 flag planting sound by https://freesound.org/s/337049/
 
-## icons
+## icons & graphics
 * Zoom Out by Ben from NounProject.com
 * Zoom by Ben from NounProject.com
 * Photo by prakruti from NounProject.com
 * Video by Kmg Design from NounProject.com
 * Hazard by Mike Rowe from NounProject.com
 * trim by Hilmy Abiyyu NounProject.com
+* [https://commons.wikimedia.org/wiki/File:HUDWAY_Drive_on_BMW_dashboard.jpg](Hand on Steering Wheel #1)
 
 
 ## nice vibrations
