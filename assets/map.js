@@ -347,6 +347,11 @@ function buildMap() {
     mapboxgl.accessToken = 'pk.eyJ1IjoiZGFzaGNhbWJpa2UiLCJhIjoiY2w3cnozZDN0MGp5cTNubzAwbHF0NGIyaCJ9.PKvOiY3srXhJhl-cp17-Og';
     mapboxgl.clearStorage();
 
+    const urlParams = new URLSearchParams(window.location.search);
+    const geojsonPath = urlParams.get('geojson')
+    const centerlat = urlParams.get('centerlat')
+    const centerlon = urlParams.get('centerlon')
+
     // A terribly hacky way of caching for at most one hour (while images cache for 7 days)
     const date = new Date();
     const currentUTCHourForCacheControl = date.getDate() + "-" + date.getUTCHours();
@@ -354,7 +359,7 @@ function buildMap() {
     const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/dark-v10',
-        center: [-79.968, 40.45],
+        center: [centerlon, centerlat],
         zoom: 12
     });
      
@@ -368,7 +373,7 @@ function buildMap() {
         map.addSource('hazards', {
             'type': 'geojson',
             //'data': '/assets/hazardreports.geojson',
-            'data': cdnUrl + 'AggregatedHazards%2Fpittsburgh.geojson?alt=media&utcHourForCacheControl=' + currentUTCHourForCacheControl,
+            'data': `${cdnUrl}AggregatedHazards%2F${geojsonPath}?alt=media`,
             cluster: false,
             clusterMaxZoom: 14, // Max zoom to cluster points on
             clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)

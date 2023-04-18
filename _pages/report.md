@@ -1,0 +1,54 @@
+---
+layout: page
+title: 311 Map
+fulltitle: 311 Hazard Report Map, Pittsburgh Pennsylvania
+include_in_header: false
+include_in_footer: false
+image: assets/map.png
+order: 3
+---
+
+<h1>Pittsburgh's Map of Reported Hazard for Bicyclists</h1>
+Each of these reports has been sent to the City of Pittsburgh via 311.
+The map does not represent the most dangerous areas of the city; rather, it represents areas where the most hazards have been reported, and where better infrastructure would be most impactful.
+
+<h1>Contribute to this map</h1>
+1. Download our app for <a href="https://play.google.com/store/apps/details?id=com.dashcambike.dashcamapp">Android</a> or <a href="https://apps.apple.com/us/app/dashcam-for-your-bike/id1577996345?uo=4">iPhone</a> and record every ride.
+2. When you encounter a hazard in Pittsburgh, tap the screen to add a marker.
+3. When you finish your ride, return to the marker, hit Share, then hit Report To 311.
+<a href="/311/">See detailed instructions here</a>.
+
+Not in Pittsburgh? <a href="https://forms.gle/HHFisHhgsHxaMvFi8" target="_blank">Request this feature in your city</a>.
+
+<iframe src="/assets/standalonemap.html" style="overflow:hidden; width: 100%; height: 90vh"></iframe>
+
+<div id="description">
+<h1>Download Dashcam for your Bike</h1>
+Turn your smartphone into a high-quality dashcam with our app, and report hazards to your city:
+</div>
+{% include downloadnow.html %}
+
+<div id="description">
+<h1>How the city uses this data</h1>
+Let's face it: the city does not have the resources to fix all every problem we encounter. By submitting 311 reports through the app, you're helping the city prioritize improvements in areas that need in the most.
+
+<figure class="testimonial">
+  <figcaption>
+    <blockquote>
+      <p>"[This data] will be used to inform DOMI's efforts to create a safe and connected bike network that increases access for people of all ages and abilities."</p>
+    </blockquote>
+    <h3>Rylan Seifert</h3>
+    <h4>Pittsburgh's Department of Mobility and Infrastructure</h4>
+  </figcaption>
+</figure>
+
+
+Hear more about our 2022 collaboration with DOMI:
+
+<div>
+    <iframe style="max-width: 100%; width: 560px; height: 360px" src="https://www.youtube.com/embed/DlN3Tk9lYvI?start=22" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+</div>
+
+<script src="https://kit.fontawesome.com/1c79ae00a7.js" crossorigin="anonymous"></script>
