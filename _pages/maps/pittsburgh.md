@@ -6,6 +6,7 @@ geojson: pittsburgh.geojson
 cityname: Pittsburgh
 centerlat: 40.45
 centerlon: -79.968
+include_in_footer: false
 ---
 
 <div id="description">

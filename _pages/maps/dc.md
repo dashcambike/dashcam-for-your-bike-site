@@ -6,5 +6,6 @@ geojson: washingtondc.geojson
 cityname: Washington DC
 centerlat: 38.92
 centerlon: -77.04
+include_in_footer: false
 ---
 
