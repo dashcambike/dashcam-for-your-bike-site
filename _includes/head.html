@@ -18,6 +18,25 @@
 	<!-- Smart App Banner -->
 	{% if site.enable_smart_app_banner %}
 		<meta name="apple-itunes-app" content="app-id={{ site.ios_app_id }}">
+    {% else %}
+        <!-- Start SmartBanner configuration -->
+        <meta name="smartbanner:title" content="Dashcam for your Bike">
+        <meta name="smartbanner:author" content="Download the app">
+        <meta name="smartbanner:price" content="{{ site.app_price }}">
+        <meta name="smartbanner:price-suffix-apple" content=" - On the App Store">
+        <meta name="smartbanner:price-suffix-google" content=" - In Google Play">
+        <meta name="smartbanner:icon-apple" content="{{ site.app_icon | absolute_url }}">
+        <meta name="smartbanner:icon-google" content="{{ site.app_icon | absolute_url }}">
+        <meta name="smartbanner:exclude-user-agent-regex" content="^.*iPad$">
+        <meta name="smartbanner:button" content="View">
+        <meta name="smartbanner:button-url-apple" content="{{ site.appstore_link }}">
+        <meta name="smartbanner:button-url-google" content="{{ site.playstore_link }}">
+        <meta name="smartbanner:enabled-platforms" content="android,ios">
+        <meta name="smartbanner:close-label" content="Close">
+        <!-- End SmartBanner configuration -->
+
+        <link rel="stylesheet" href="node_modules/smartbanner.js/dist/smartbanner.min.css">
+        <script src="node_modules/smartbanner.js/dist/smartbanner.min.js"></script>
 	{% endif %}
 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">

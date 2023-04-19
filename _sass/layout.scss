@@ -49,7 +49,19 @@
   clear: left;
 }
 
-.imageWrapper a {
+.section a {
+  color: #b1dbff;
+}
+
+.header a {
+  color: #eceeee;
+}
+
+footer a, footer a:link, footer a:visited {
+  color: #b1dbff;
+}
+
+.footerLinks a, .footerLinks a:link,  .footerLinks a:visited {
   color: #eceeee;
 }
 
