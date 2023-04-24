@@ -11,11 +11,19 @@ Our phone mount has been tested for thousands of hours, and creates the most sta
 It is compatible with all phone cases under 0.5" thick, and works with removable PopSockets.
 
 <center>
-<a href="https://amzn.to/3QqCVoU" target="_blank">
+  <a href="https://amzn.to/3QqCVoU" target="_blank">
     <img class="amznLink" src="/assets/mounts/ourmount.jpg" alt="A Dashcam-branded mount with a claw design">
-    <br/>
-    <button class="buyAmazonButton bigButton">Show now at Amazon.com</button>
-</a>
+  </a>
+
+<br/>
+
+  <a href="https://amzn.to/3QqCVoU" target="_blank">
+    <button class="buyAmazonButton smallButton">Shop now at Amazon.com</button>
+  </a>
+
+  <a href="https://shopify.dashcam.bike" target="_blank">
+    <button class="buyAmazonButton smallButton">Buy on Shopify</button>
+  </a>
 </center>
 
 While Dashcam for your Bike is compatible with a wide range of mounts, our branded mount works better than anything else we've tested.
