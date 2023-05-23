@@ -26,7 +26,7 @@ It is compatible with all phone cases under 0.5" thick, and works with removable
   </a>
 </center>
 
-While Dashcam for your Bike is compatible with a wide range of mounts, our branded mount works better than anything else we've tested.
+While dashcam.bike is compatible with a wide range of mounts, our branded mount works better than anything else we've tested.
 It's secure, easy to install, and has a wide tilt angle so you can easily tilt your phone up to glance at Maps, then back down to continue recording.
 
 ## What's important in a mount?
@@ -73,7 +73,7 @@ Note that we've tested our recommended mounts for thousands of hours without iss
 
 # Mounts to avoid
 
-We've tested a ton of mounts, some more than others. Here are some mounts we think you should avoid buying for the Dashcam App - though they may be great mounts in other settings.
+We've tested a ton of mounts, some more than others. Here are some mounts we think you should avoid buying for the dashcam.bike app - though they may be great mounts in other settings.
 
 ## Do not buy #1: PopMount 2
 <a class="amznLeftLink" href="https://amzn.to/3k1TOKA" target="_blank">
@@ -97,8 +97,8 @@ There are several mounts with this design - all that we've tested block the thir
 It might be okay with a two-lens design, and we love how easy it is to get your phone in and out, but it wasn't worth the trade-off to us.
 <div class="clearLeftFloat"></div>
 
-# What is Dashcam for your Bike?
-Dashcam for your Bike is an app that turns your smartphone into a dashcam.
+# What is dashcam.bike?
+dashcam.bike is an app that turns your smartphone into a dashcam.
 The app has gesture-based controls so you don't have to take your eyes off the road, screen-dimming to save you battery life, direct-to-311 reporting in certain cities, and easy creation of compilation videos.
 
 {% include downloadnow.html %}

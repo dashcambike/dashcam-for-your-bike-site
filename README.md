@@ -1,4 +1,4 @@
-# Homepage for Dashcam for your Bike
+# Homepage for dashcam.bike
 See https://dashcam.bike
 
 # To run
