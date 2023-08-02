@@ -25,6 +25,6 @@ include_in_footer: false
 
 
     <div>
-        <iframe style="max-width: 100%; width: 560px; height: 360px" src="https://www.youtube.com/embed/DlN3Tk9lYvI?start=22" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe style="max-width: 560px;" class="youtubeVideo" src="https://www.youtube.com/embed/DlN3Tk9lYvI?start=22" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 </div>

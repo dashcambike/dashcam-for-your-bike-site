@@ -1,18 +1,17 @@
 ---
 layout: page
-title: Recommended Mounts
-include_in_header: false
+title: Mounts
+include_in_header: true
 include_in_footer: true
 order: 2
 ---
 
-# Our Best Mount
-Our phone mount has been tested for thousands of hours, and creates the most stable footage of any mount we've tried.
-It is compatible with all phone cases under 0.5" thick, and works with removable PopSockets.
+# Our Footage-Stabilizing Phone Mount
+Our phone mount is designed to create the best footage and support the widest range of phones without blocking the camera.
 
 <center>
   <a href="https://amzn.to/3QqCVoU" target="_blank">
-    <img class="amznLink" src="/assets/mounts/ourmount.jpg" alt="A Dashcam-branded mount with a claw design">
+    <img width="400px" class="amznLink" src="/assets/mounts/ourmount.jpg" alt="A Dashcam-branded mount with a claw design">
   </a>
 
 <br/>
@@ -26,22 +25,22 @@ It is compatible with all phone cases under 0.5" thick, and works with removable
   </a>
 </center>
 
-While dashcam.bike is compatible with a wide range of mounts, our branded mount works better than anything else we've tested.
-It's secure, easy to install, and has a wide tilt angle so you can easily tilt your phone up to glance at Maps, then back down to continue recording.
+## Stabilization Demo: Our Mount vs others
 
-## What's important in a mount?
+<center>
+<iframe class="youtubeVideo" style="text-align: center" width="560" height="315" src="https://www.youtube.com/embed/X-6fH3Qc2ZE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</center>
+
+Our mount clamps both the top and bottom of the phone and has three vibration-dampening pads to keep your footage as shake-free as possible.
+
+
+# Alternatives
+If your phone is larger than 7" or your phone case is thicker than 0.5", you may need a different mount.
+Here's what to look for:
 
 * **No Straps**: Straps make it hard to attach and detach your phone, and they often block the camera.
 * **No Quick-Release**: Quick-release mounts come loose too frequently. We recommend mounts that attach securely with a hex key.
-* **Doesn't block camera**: The app always records with the widest-angle lens you have, so make sure the mount doesn't block that camera.
-
-## A note on PopSockets
-All mounts we recommend are compatible with Swappable PopSockets - but you will need to remove the PopSocket for your phone to fit.
-You can buy a <a href="https://amzn.to/3q7fG7D">Swappable PopSocket on Amazon</a> for $10 to $15.
-
-# Alternatives
-If the above mount doesn't work for your case, we have some alternatives.
-We have tested each of these for around 100 hours, but we have not tested them as thoroughly as our Dashcam-branded mount.
+* **Doesn't block camera**: You know your phone best. Find a mount that doesn't block the standard or wide-angle camera.
 
 ## #1: Quick-Release Mount
 
@@ -70,6 +69,10 @@ The downside: **this mount does not swivel**, meaning you cannot tilt it to view
 
 Note that we've tested our recommended mounts for thousands of hours without issue, and ridden on both streets, gravel, and cobblestone with them.
 <div class="clearLeftFloat"></div>
+
+## Using Swappable PopSockets
+All mounts we recommend are compatible with Swappable PopSockets - but you will need to remove the PopSocket for your phone to fit.
+You can buy a <a href="https://amzn.to/3q7fG7D">Swappable PopSocket on Amazon</a> for $10 to $15.
 
 # Mounts to avoid
 
@@ -107,5 +110,4 @@ The app has gesture-based controls so you don't have to take your eyes off the r
 <small>
 <b>Note</b>
 The links to Amazon on this page are part of the Amazon Associate program.
-While we earn from each qualifying purchase, this did not influence our reviews.
 </small>
