@@ -32,24 +32,47 @@
   text-align: center;
 }
 
-.buyAmazonButton {
-  margin-top: 5px;
-  padding: 10px;
-  border-radius: 10px;
-  background-image: linear-gradient(0deg, #0091c0, #0076b1);
-  border: 0px;
-  color: #eceeee;
-  box-shadow: 2px 2px 3px #0076b1;
-  cursor: pointer;
+/* Begin video slider */
+#video-compare-container {
+  display: inline-block;
+  line-height: 0;
+  position: relative;
+  width: 100%;
+  height: 400px;
+  padding-top: 42.3%;
+}
+#video-compare-container > video {
+  width: 100%;
+  position: absolute;
+  top: 0; height: 100%;
+  left: 0;
+  right: 0;
+}
+#video-clipper {
+  width: 50%; position: absolute;
+  top: 0; bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+#video-clipper video {
+  width: 200%;
+  postion: absolute;
+  height: 100%;
+}
+/* End video slider */
+
+.flexwrapper {
+  margin-top: 30px;
+  display: flex;
+  color: $main-text-color;
+  text-align: center;
+  justify-content: space-between;
 }
 
-.bigButton {
-  font-size: 1.3em;
-  margin-bottom: 10px;
+.flexleft {
 }
-
-.littleButton {
-  font-size: 0.9em;
+.flexright {
 }
 
 .clearLeftFloat {
@@ -61,7 +84,7 @@
 }
 
 .header a {
-  color: #eceeee;
+  color: $main-text-color;
 }
 
 footer a, footer a:link, footer a:visited {
@@ -69,7 +92,7 @@ footer a, footer a:link, footer a:visited {
 }
 
 .footerLinks a, .footerLinks a:link,  .footerLinks a:visited {
-  color: #eceeee;
+  color: $main-text-color;
 }
 
 .headerBackground {
@@ -357,6 +380,16 @@ footer a, footer a:link, footer a:visited {
     margin-bottom: 15px;
 	color: $main-text-color;
 }
+.videoComparisonText {
+	color: #8c8c8c;
+    font-size: 0.5em;
+    margin-top: 0px;
+    text-align: center;
+    max-width: 400px;
+    left: auto;
+    right: auto;
+}
+
 
 @media only screen and (max-width: 992px) {
 
@@ -381,9 +414,35 @@ footer a, footer a:link, footer a:visited {
 	
 } 
 
+.buyAmazonButton {
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  background-image: linear-gradient(0deg, #0091c0, #0076b1);
+  border: 0px;
+  color: $main-text-color;
+  box-shadow: 2px 2px 3px #0076b1;
+  cursor: pointer;
+}
+
+.bigButton {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+.littleButton {
+  font-size: 0.9em;
+}
 .playStore {
-	height: 75px;
-	margin-right: 24px;
+  height: 75px;
+  margin-right: 24px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.appStore {
+  height: 75px;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 @media only screen and (max-width: 992px) {
@@ -391,7 +450,15 @@ footer a, footer a:link, footer a:visited {
 	.playStore {
 		margin-right: 24px;
 		margin-bottom: 0px;
-	}
+        height: 65px;
+    }
+    .appStore {
+        height: 65px;
+    }
+    .bigButton {
+      font-size: 1em;
+      height: 65px;
+    }
 	
 } 
 
@@ -400,13 +467,16 @@ footer a, footer a:link, footer a:visited {
 	.playStore {
 		margin-right: 0px;
 		margin-bottom: 24px;
-	}
-	
+        height: 55px;
+    }
+    .appStore {
+        height: 55px;
+    }
+    .bigButton {
+      font-size: 0.8em;
+      height: 55px;
+    }
 } 
-
-.appStore {
-	height: 75px;
-}
 
 
 // iPhone Device Preview
@@ -507,7 +577,7 @@ footer a, footer a:link, footer a:visited {
 /*** Main preview grid: the first thing they see on landing page ***/
 .previewgrid {
   display: grid;
-  margin-top: 90px;
+  margin-top: 0px;
   margin-bottom: 20px;
   grid-template-areas:
     'phone maininfo'

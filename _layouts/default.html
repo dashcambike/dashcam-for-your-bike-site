@@ -10,6 +10,7 @@
                     {% include header.html %}
 
                     <div class="previewgrid">
+                        <!--
                         <div class="previewgrid-phone">
                             <div class="iphonePreview">
                                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 0 0" style="position: absolute;">
@@ -28,28 +29,76 @@
                                 {% include screencontent.html %}
                             </div>
                         </div>
+                        -->
                         <div class="previewgrid-maininfo">
                             <div class="appDescriptionContainer">
-                                <h1 class="appDescription">We turn your <span class="highlightedword">smartphone</span> into a <span class="highlightedword">dashcam</span>.</h1>
-                                <p class="appDescription">The best bike camera is the one you already carry. Record your rides with your smartphone.</p>
+                                <h1 class="appDescription">Our
+                                    <a href="https://amzn.to/3QqCVoU" target="_blank"><span class="highlightedword">mount</span></a>
+                                        and
+                                    <a href="tosto.re/dashcambike" target="_blank"><span class="highlightedword">app</span></a>
+                                    work together to create a high-quality bike camera.</h1>
+
+                                <p class="appDescription">The best bike camera is the one you actually use. Record your rides with your smartphone.</p>
+                                <div id="video-compare-container">
+                                    <video class="screenvideo" autoplay="autoplay" width="100%" muted loop preload>
+                                        <source src="/assets/videos/othermount-1x1.mp4" type="video/mp4">
+                                    </video>
+                                 <div id="video-clipper">
+                                    <video class="screenvideo" autoplay="autoplay" width="100%" muted loop preload>
+                                        <source src="/assets/videos/ourmount-1x1.mp4" type="video/mp4">
+                                    </video>
+                                  </div>
+                                </div>
+                                <center><p class="videoComparisonText">Drag the video to compare our mount with our in-app cinematic stabilization with other mounts and the standard camera app. Both videos taken on an iPhone 12 Pro on the same bicycle.</p></center>
                             </div>
 
-                            {% include downloadnow.html %}
-                        </div>
 
-                        <div class="previewgrid-secondaryinfo" style="text-align: center; margin-top: 30px; padding-top: 30px; border-top: 1px solid grey">
-                            <a href="https://amzn.to/3QqCVoU" target="_blank">
-                                <img width="256px" class="amznLink" src="/assets/mounts/ourmount.jpg" alt="A Dashcam-branded mount with a claw design">
-                            </a>
-                                <br/>
-                                <h2 class="appDescription">Designed to work with our shake-reducing mount</h2>
-                            <a href="https://amzn.to/3QqCVoU" target="_blank">
-                                <button class="buyAmazonButton smallButton">Shop now at Amazon.com</button>
-                            </a>
-                            <a href="https://shopify.dashcam.bike" target="_blank">
-                                <button class="buyAmazonButton smallButton">Buy on Shopify</button>
-                            </a>
-                            </a>
+
+
+  <script>
+      function trackLocation(e) {
+        var rect = videoContainer.getBoundingClientRect(),
+            position = ((e.pageX - rect.left) / videoContainer.offsetWidth)*100;
+        if (position <= 100) { 
+          videoClipper.style.width = position+"%";
+          clippedVideo.style.width = ((100/position)*100)+"%";
+          clippedVideo.style.zIndex = 3;
+          }
+      }
+      var videoContainer = document.getElementById("video-compare-container"),
+      videoClipper = document.getElementById("video-clipper"),
+      clippedVideo = videoClipper.getElementsByTagName("video")[0];
+      videoContainer.addEventListener("mousemove", trackLocation, false); 
+      videoContainer.addEventListener("touchstart",trackLocation,false);
+      videoContainer.addEventListener("touchmove",trackLocation,false);
+  </script>
+
+
+
+
+
+
+                            <div class="flexwrapper">
+                                <div class="flexleft">
+                                    <h2>Step 1:</h2>
+                                    Download our smart dashcam.bike app
+                                    <br/>
+                                    {% include downloadnow.html %}
+                                </div>
+                                <div class="flexright">
+                                    <h2>Step 2:</h2>
+                                    Buy our stabilizing phone mount
+                                    <br/>
+                                    <div class="downloadButtonsContainer">
+                                        <a href="https://amzn.to/3QqCVoU" target="_blank">
+                                            <button class="buyAmazonButton bigButton">Buy on Amazon</button>
+                                        </a>
+                                        <a href="https://shopify.dashcam.bike" target="_blank">
+                                            <button class="buyAmazonButton bigButton">Buy on Shopify</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -161,5 +210,22 @@
             </div>
         </div>
         <script src="/assets/accordion.js"></script>
+        <script>
+            function trackLocation(e) {
+              var rect = videoContainer.getBoundingClientRect(),
+                  position = ((e.pageX - rect.left) / videoContainer.offsetWidth)*100;
+              if (position <= 100) {
+                videoClipper.style.width = position+"%";
+                clippedVideo.style.width = ((100/position)*100)+"%";
+                clippedVideo.style.zIndex = 3;
+              }
+            }
+            var videoContainer = document.getElementById("video-compare-container"),
+            videoClipper = document.getElementById("video-clipper"),
+            clippedVideo = videoClipper.getElementsByTagName("video")[0];
+            videoContainer.addEventListener("mousemove", trackLocation, false); 
+            videoContainer.addEventListener("touchstart",trackLocation,false);
+            videoContainer.addEventListener("touchmove",trackLocation,false);
+        </script>
 </body>
 </html>
