@@ -39,44 +39,24 @@
                                     work together to create a high-quality bike camera.</h1>
 
                                 <p class="appDescription">The best bike camera is the one you actually use. Record your rides with your smartphone.</p>
-                                <div id="video-compare-container">
-                                    <video class="screenvideo" autoplay="autoplay" width="100%" muted loop preload>
-                                        <source src="/assets/videos/othermount-1x1.mp4" type="video/mp4">
-                                    </video>
-                                 <div id="video-clipper">
-                                    <video class="screenvideo" autoplay="autoplay" width="100%" muted loop preload>
-                                        <source src="/assets/videos/ourmount-1x1.mp4" type="video/mp4">
-                                    </video>
-                                  </div>
-                                </div>
-                                <center><p class="videoComparisonText">Drag the video to compare our mount with our in-app cinematic stabilization with other mounts and the standard camera app. Both videos taken on an iPhone 12 Pro on the same bicycle.</p></center>
+                                <center>
+                                    <div id="video-compare-container">
+                                        <video class="screenvideo" width="100%" autoplay muted loop preload playsinline>
+                                            <source src="/assets/videos/othermount-1x1.mp4" type="video/mp4">
+                                        </video>
+                                        <div id="video-clipper">
+                                            <video class="screenvideo" width="100%" autoplay muted loop preload playsinline>
+                                                <source src="/assets/videos/ourmount-1x1.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                        <div id="video-comparison-handle" class="bal-handle">
+                                            <span class="handle-left-arrow"></span>
+                                            <span class="handle-right-arrow"></span>
+                                        </div>
+                                    </div>
+                                    <p class="videoComparisonText">Drag the video to compare our mount with our in-app cinematic stabilization with other mounts and the standard camera app. Both videos taken on an iPhone 12 Pro on the same bicycle.</p>
+                                </center>
                             </div>
-
-
-
-
-  <script>
-      function trackLocation(e) {
-        var rect = videoContainer.getBoundingClientRect(),
-            position = ((e.pageX - rect.left) / videoContainer.offsetWidth)*100;
-        if (position <= 100) { 
-          videoClipper.style.width = position+"%";
-          clippedVideo.style.width = ((100/position)*100)+"%";
-          clippedVideo.style.zIndex = 3;
-          }
-      }
-      var videoContainer = document.getElementById("video-compare-container"),
-      videoClipper = document.getElementById("video-clipper"),
-      clippedVideo = videoClipper.getElementsByTagName("video")[0];
-      videoContainer.addEventListener("mousemove", trackLocation, false); 
-      videoContainer.addEventListener("touchstart",trackLocation,false);
-      videoContainer.addEventListener("touchmove",trackLocation,false);
-  </script>
-
-
-
-
-
 
                             <div class="flexwrapper">
                                 <div class="flexleft">
@@ -212,12 +192,17 @@
         <script src="/assets/accordion.js"></script>
         <script>
             function trackLocation(e) {
-              var rect = videoContainer.getBoundingClientRect(),
-                  position = ((e.pageX - rect.left) / videoContainer.offsetWidth)*100;
-              if (position <= 100) {
+              var rect = videoContainer.getBoundingClientRect();
+              var xPos = e.pageX;
+              xPos = Math.max(xPos, videoContainer.offsetLeft + .1 * videoContainer.offsetWidth);
+              xPos = Math.min(xPos, videoContainer.offsetLeft + .9 * videoContainer.offsetWidth);
+              var position = ((xPos - rect.left) / videoContainer.offsetWidth)*100;
+
+              if (position >= 0 && position <= 100) { 
                 videoClipper.style.width = position+"%";
                 clippedVideo.style.width = ((100/position)*100)+"%";
                 clippedVideo.style.zIndex = 3;
+                document.getElementById("video-comparison-handle").style.left = xPos + "px";
               }
             }
             var videoContainer = document.getElementById("video-compare-container"),
