@@ -61,7 +61,7 @@
                             <div class="flexwrapper">
                                 <div class="flexleft">
                                     <h2>Step 1:</h2>
-                                    Download our smart dashcam.bike app
+                                    Download the dashcam.bike app
                                     <br/>
                                     {% include downloadnow.html %}
                                 </div>
@@ -211,6 +211,30 @@
             videoContainer.addEventListener("mousemove", trackLocation, false); 
             videoContainer.addEventListener("touchstart",trackLocation,false);
             videoContainer.addEventListener("touchmove",trackLocation,false);
+
+            // Autoplay both videos once they're both loaded
+            var numLoaded = 0;
+            var bothVideos = videoContainer.getElementsByTagName("video");
+            function seekToSync(e) {
+                numLoaded += 1;
+
+                // When both videos first load, if they're not aligned,
+                // reset both videos to 0. We can't seek to the same time
+                // because seeking only works up to loaded times, otherwise
+                // the seek is ignored.
+                if (numLoaded == 2)
+                {
+                    var time0 = bothVideos[0].currentTime;
+                    var time1 = bothVideos[1].currentTime;
+                    if (Math.abs(time0 - time1) > 0.1)
+                    {
+                        bothVideos[1].currentTime = 0;
+                        bothVideos[0].currentTime = 0;
+                    }
+                }
+            }
+            bothVideos[0].addEventListener("canplaythrough", seekToSync);
+            bothVideos[1].addEventListener("canplaythrough", seekToSync);
         </script>
 </body>
 </html>
