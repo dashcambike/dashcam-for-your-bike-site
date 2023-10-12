@@ -202,7 +202,7 @@
                 videoClipper.style.width = position+"%";
                 clippedVideo.style.width = ((100/position)*100)+"%";
                 clippedVideo.style.zIndex = 3;
-                document.getElementById("video-comparison-handle").style.left = xPos + "px";
+                document.getElementById("video-comparison-handle").style.left = (xPos - videoContainer.offsetLeft) + "px";
               }
             }
             var videoContainer = document.getElementById("video-compare-container"),
