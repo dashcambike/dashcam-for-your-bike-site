@@ -9,7 +9,8 @@ include_in_footer: false
 
 Thank you for purchasing the [dashcam.bike phone mount](https://amzn.to/3QqCVoU)!
 As a thank you, use code `RECORDEVERYRIDE` for a 30-day free trial of Dashcam Premium.
-To use this code, go to Settings, tap Subscribe, and enter the code when prompted.
+[Click here to use this code on iPhones.](https://apps.apple.com/redeem/?id=1577996345&code=RECORDEVERYRIDE).
+To use this code on Android, go to Settings, tap Subscribe, and enter the code when prompted.
 
 
 With Dashcam Premium, you can:
