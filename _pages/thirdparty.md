@@ -111,16 +111,16 @@ flag planting sound by https://freesound.org/s/337049/
 * Video by Kmg Design from NounProject.com
 * Hazard by Mike Rowe from NounProject.com
 * trim by Hilmy Abiyyu NounProject.com
-* [https://commons.wikimedia.org/wiki/File:HUDWAY_Drive_on_BMW_dashboard.jpg](Hand on Steering Wheel #1)
-* Community by Vectors Market from [https://thenounproject.com/browse/icons/term/community/](Noun Project) (CC BY 3.0)
-* HD by Vectorstall from [https://thenounproject.com/browse/icons/term/hd/](Noun Project) (CC BY 3.0)
-* tragedy movie by Magicon from [https://thenounproject.com/browse/icons/term/tragedy-movie/](Noun Project) (CC BY 3.0)
-* Movie by AFY Studio from [https://thenounproject.com/browse/icons/term/movie/](Noun Project) (CC BY 3.0)
-* front camera by masmooh from [https://thenounproject.com/browse/icons/term/front-camera/](Noun Project) (CC BY 3.0)
-* brightness by Lora from [https://thenounproject.com/browse/icons/term/brightness/](Noun Project) (CC BY 3.0)
-* watermark by Mudayana from [https://thenounproject.com/browse/icons/term/watermark/](Noun Project) (CC BY 3.0)
-* vibration by Astonish from [https://thenounproject.com/browse/icons/term/vibration/](Noun Project) (CC BY 3.0)
-* picture in picture by Ria Fitriana from [https://thenounproject.com/browse/icons/term/picture-in-picture/](Noun Project) (CC BY 3.0)
+* [Hand on Steering Wheel #1](https://commons.wikimedia.org/wiki/File:HUDWAY_Drive_on_BMW_dashboard.jpg)
+* Community by Vectors Market from [Noun Project](https://thenounproject.com/browse/icons/term/community/) (CC BY 3.0)
+* HD by Vectorstall from [Noun Project](https://thenounproject.com/browse/icons/term/hd/) (CC BY 3.0)
+* tragedy movie by Magicon from [Noun Project](https://thenounproject.com/browse/icons/term/tragedy-movie/) (CC BY 3.0)
+* Movie by AFY Studio from [Noun Project](https://thenounproject.com/browse/icons/term/movie/) (CC BY 3.0)
+* front camera by masmooh from [Noun Project](https://thenounproject.com/browse/icons/term/front-camera/) (CC BY 3.0)
+* brightness by Lora from [Noun Project](https://thenounproject.com/browse/icons/term/brightness/) (CC BY 3.0)
+* watermark by Mudayana from [Noun Project](https://thenounproject.com/browse/icons/term/watermark/) (CC BY 3.0)
+* vibration by Astonish from [Noun Project](https://thenounproject.com/browse/icons/term/vibration/) (CC BY 3.0)
+* picture in picture by Ria Fitriana from [Noun Project](https://thenounproject.com/browse/icons/term/picture-in-picture/) (CC BY 3.0)
 
 
 ## nice vibrations
