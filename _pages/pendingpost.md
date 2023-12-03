@@ -10,6 +10,6 @@ order: 3
 
 Thank you for your 311 Report. It has been sent to your city's 311 line.
 
-It will be posted online shortly in a compilation video that we generate and post on instagram.
+It will be posted online shortly on Twitter.
 
-Please follow [@dashcambike](https://instagram.com/dashcambike) to be notified when your report is shared for discussion online.
+Please follow [@dashcambike](https://twitter.com/dashcambike) to be notified when your report is shared for discussion online.
