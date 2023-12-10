@@ -122,6 +122,32 @@ faqs                                      :
       - You can also <a href="https://docs.google.com/forms/d/1aRcv5QRWSCjXj5o7L1jGr4_jtM3SEcvBRJiICHYJG7s/edit#responses">fill out our form</a>.
     fontawesome_icon_name                 : radiation-alt
 
+# 311FAQs
+faqs311                                   :
+  - title                                 : Who can apply?
+    description                           : 
+      - Bike/Ped Advocacy Organizations and similar groups
+      - This application is specifically for organizations dedicated to bicyclist safety. They can be focused on an entire region, or on a specific project. We will also consider applications from city government officials. Individuals can fill out our <a href="/311requestform" target="blank">interest form</a>.
+    fontawesome_icon_name                 : users
+
+  - title                                 : What is the cost?
+    description                           :
+      - None
+      - There is no cost to apply. If accepted, we will set up the 311 connection free-of-charge, and will maintain it for as long as practical for us. Note that without a contract from the your city government, we cannot guarantee how long the 311 connection will last.
+    fontawesome_icon_name                 : money-bill
+
+  - title                                 : Do you need a relationship with our city government?
+    description                           :
+      - Probably Not.
+      - We prefer cities where the local government is on board and interested in receiving the data, and we will look to you to help us get this conversation started. However, this is not required in most cities.
+    fontawesome_icon_name                 : city
+
+  - title                                 : Why are you opening up this application?
+    description                           :
+      - To make biking a safer way to get around cities.
+      - We are bike safety advocates, first and foremost. We truly believe that a mass of cyclists reporting the hazards they encounter on their trips around town will help cities understand which parts of their bicycle network are missing, which parts are failing, and what solutions have real, measurable impacts.
+    fontawesome_icon_name                 : bicycle
+
 
 # Theme Settings
 main_text_color                           : "#eceeee"
