@@ -128,7 +128,7 @@ function getDescriptionFor(featureProperties) {
     {
         popupBody += `<p><video width="100%" controls autoplay><source src="${url}" type="video/mp4"></video></p>`;
     }
-    else if (filepath.endsWith(".png"))
+    else if (filepath.endsWith(".png") || filepath.endsWith(".jpg"))
     {
         popupBody += `<p><a href="${tweetURL}" target="_blank"><img class="image-loading" src="${url}" width="100%" onload="fixPopupPositionAfterLoad()"/></a></p>`;
     }
