@@ -33,6 +33,37 @@
   text-align: center;
 }
 
+.image-in-flexbox {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.flexbox-white-bg {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.flexbox-white-bg-image-on-right {
+  flex-wrap: wrap-reverse;
+}
+
+.flexitem-image {
+  flex-basis: max-content;
+}
+
+.flexitem-text {
+  flex-grow: 1;
+  width: 400px;
+}
+
+.caption {
+  text-align: center;
+  margin-top: 0px;
+  font-size: .7em;
+  font-style: italic;
+}
+
 /* Begin video slider */
 #video-compare-container {
   display: inline-block;
