@@ -34,8 +34,7 @@
 }
 
 .image-in-flexbox {
-  margin-right: 20px;
-  margin-left: 20px;
+  max-width: 100%;
 }
 
 .flexbox-white-bg {
@@ -55,6 +54,8 @@
 .flexitem-text {
   flex-grow: 1;
   width: 400px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .caption {
