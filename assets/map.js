@@ -264,6 +264,7 @@ function getFilterForRangeAndUpdateUI()
     // Set interactivity
     document.getElementById('startDate').disabled = !filteredTime.doSelectRange;
     document.getElementById('endDate').disabled = !filteredTime.doSelectRange;
+    document.getElementById('animateButton').style.display = filteredTime.doSelectRange ? "block" : "none";
 
     if (!filteredTime.doSelectRange)
     {
@@ -711,6 +712,72 @@ function loadPopupFromGet() {
     // Note: we DO want the encoded URL string
     popup(searchUrlSplit[1], null);
   }
+}
+
+let animationStartDate = new Date(),
+    animationEndDate = new Date(),
+    currAnimationDate = new Date(),
+    animationInterval = 0,
+    animationDaysPerFrame = 1;
+function animateStartToEnd()
+{
+    document.getElementById('animateButton').innerText = "Stop Animation";
+    document.getElementById('animateButton').onclick = stopAnimation;
+    animationStartDate.setTime(filteredTime.startDate.getTime());
+    animationEndDate.setTime(filteredTime.endDate.getTime());
+    currAnimationDate.setTime(animationStartDate.getTime());
+
+    enableOrDisableAnimationControls(true);
+
+    const numDays = (animationEndDate - animationStartDate) / (1000 * 60 * 60 * 24);
+    animationDaysPerFrame = Math.max(1, Math.floor(numDays / 70));
+    const numFrames = numDays / animationDaysPerFrame;
+    let timestep = 1000 * 10 / numFrames; // try to take 10 seconds
+    timestep = Math.min(timestep, 1000); // but no slower than 1 second between frames
+    timestep = Math.max(timestep, 100); // and no faster than .1 seconds
+    animationInterval = setInterval(animateStep, timestep);
+}
+
+function stopAnimation()
+{
+    document.getElementById('animateButton').innerText = "Animate";
+    document.getElementById('animateButton').onclick = animateStartToEnd;
+    enableOrDisableAnimationControls(false);
+    filteredTime.startDate.setTime(animationStartDate.getTime());
+    filteredTime.endDate.setTime(animationEndDate.getTime());
+    document.getElementById('startDate').valueAsDate = animationStartDate;
+    document.getElementById('endDate').valueAsDate = animationEndDate;
+    
+    clearInterval(animationInterval);
+    applyFilter(map);
+}
+
+function animateStep()
+{
+    // Set start and end one day apart
+    filteredTime.startDate.setTime(currAnimationDate.getTime());
+    filteredTime.endDate.setTime(currAnimationDate.getTime());
+    filteredTime.endDate.setDate(filteredTime.endDate.getDate() + animationDaysPerFrame);
+
+    document.getElementById('startDate').valueAsDate = filteredTime.startDate;
+    document.getElementById('endDate').valueAsDate = filteredTime.endDate;
+
+    applyFilter(map);
+    enableOrDisableAnimationControls(true);
+    
+    currAnimationDate.setTime(filteredTime.endDate.getTime());
+    if (currAnimationDate.getTime() >= animationEndDate.getTime())
+    {
+        stopAnimation();
+        return;
+    }
+}
+
+function enableOrDisableAnimationControls(isAnimating)
+{
+    document.getElementById('filter-details-range-off').disabled = isAnimating;
+    document.getElementById('startDate').disabled = isAnimating;
+    document.getElementById('endDate').disabled = isAnimating;
 }
 
 const map = buildMap();
