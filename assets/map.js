@@ -75,6 +75,38 @@ let lastOpenedPopup = null;
   */
 let doneTyping = null;
 
+/**
+ * Animation helpers
+ */
+let animationStartDate = new Date(),
+    animationEndDate = new Date(),
+    currAnimationDate = new Date(),
+    animationInterval = null,
+    animationDaysPerFrame = 1;
+
+/**
+ * Helper function to throttle events.
+ */
+function throttle(mainFunction, delay) {
+  let timerFlag = null; // Variable to keep track of the timer
+
+  // Returning a throttled version 
+  return (...args) => {
+    if (timerFlag === null) { // If there is no timer currently running
+      mainFunction(...args); // Execute the main function 
+      timerFlag = setTimeout(() => { // Set a timer to clear the timerFlag after the specified delay
+        mainFunction(...args); // Execute the main function after the timeout clears so no event is missed
+        timerFlag = null; // Clear the timerFlag to allow the main function to be executed again
+      }, delay);
+    }
+  };
+}
+
+/**
+ * Throttle the onRender callback with a delay of 250 ms
+ */
+const throttledOnRender = throttle(calculateLostIncome, 250);
+
 function fixPopupPositionAfterLoad()
 {
     if (lastOpenedPopup == null)
@@ -365,9 +397,9 @@ function buildMap() {
     });
      
     map.on('style.load', () => {
-    map.setFog({});
+        map.setFog({});
     });
-     
+
     map.on('load', () => {
         // Add a geojson point source.
         // Heatmap layers also work with a vector tile source.
@@ -626,8 +658,63 @@ function buildMap() {
     //    const filteredcount = map.queryRenderedFeatures({ layers: ['hazards-point'] }).length;
     //    console.log("Current filter includes this many items: ", filteredcount)
     // });
+    map.on('render', function() {
+       throttledOnRender();
+    });
 
     return map;
+}
+
+function showLostIncomeBox(visible) {
+    if (visible) {
+        document.getElementById('dollars-lost-wrapper').style.display = 'block';
+    } else {
+        document.getElementById('dollars-lost-wrapper').style.display = 'none';
+    }
+}
+function calculateLostIncome() {
+    // Map not loaded yet -- hide
+    if (!map.getSource('hazards')) {
+        showLostIncomeBox(false);
+        return;
+    }
+
+    // Animating -- hide
+    if (animationInterval !== null) {
+        showLostIncomeBox(false);
+        return;
+    }
+
+    // Count cars in the bike lane
+    const numCarsInBikeLane = map.queryRenderedFeatures({
+        layers: ['hazards-point'],
+        filter: ["==", "HazardName",  "Car parked in bike lane"]
+    }).length;
+
+    // Don't calculate cost if it's fewer than 30
+    if (numCarsInBikeLane < 30) {
+        showLostIncomeBox(false);
+        return;
+    }
+
+    // Show the box
+    showLostIncomeBox(true);
+
+    // Calculate lost revenue
+    const dollarsPerTicket = 110.50;
+    const lostIncomeDollars = numCarsInBikeLane * dollarsPerTicket;
+    const lostIncomeString = "$" +Math.round(lostIncomeDollars).toLocaleString('en');
+    let text = `If each of the ${numCarsInBikeLane.toLocaleString('en')} cars you see on the map ` +
+            `had received a ticket, the city would have earned ${lostIncomeString}.`;
+
+    // Translate that to miles of protected bike lanes, and show if >1
+    const dollarsPerMileProtectedBikeLane = 133170; // https://usa.streetsblog.org/2020/07/29/meet-the-protected-bike-lane-that-any-city-can-afford-to-build
+    const milesThatCouldHaveBeenBuilt = Math.round(lostIncomeDollars / dollarsPerMileProtectedBikeLane * 10) / 10.0;
+    if (milesThatCouldHaveBeenBuilt > 1) {
+        text += "<br/>That could have paid for " + milesThatCouldHaveBeenBuilt + " miles of protected bike lanes.";
+    }
+
+    document.getElementById("dollars-lost-text").innerHTML = text;
 }
 
 function toggleFilter(myDivSuffix) {
@@ -714,11 +801,6 @@ function loadPopupFromGet() {
   }
 }
 
-let animationStartDate = new Date(),
-    animationEndDate = new Date(),
-    currAnimationDate = new Date(),
-    animationInterval = 0,
-    animationDaysPerFrame = 1;
 function animateStartToEnd()
 {
     document.getElementById('animateButton').innerText = "Stop Animation";
@@ -749,6 +831,7 @@ function stopAnimation()
     document.getElementById('endDate').valueAsDate = animationEndDate;
     
     clearInterval(animationInterval);
+    animationInterval = null;
     applyFilter(map);
 }
 

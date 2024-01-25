@@ -28,6 +28,29 @@
     overflow: auto;
     margin-top: 8px;
 }
+#dollars-lost-title
+{
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+}
+#dollars-lost-wrapper
+{
+    position: fixed;
+    width: 100%;
+    bottom: 20px;
+}
+#dollars-lost
+{
+    background-color: #0384b9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #eee;
+    font-family: sans-serif;
+    width: fit-content;
+}
 .mapboxgl-popup-close-button
 {
     font-size: 2em;

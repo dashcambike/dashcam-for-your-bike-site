@@ -103,6 +103,7 @@ Copyright (c) 1991-1997 Silicon Graphics, Inc.
 
 ## sounds
 flag planting sound by https://freesound.org/s/337049/
+zoom woosh sound by https://freesound.org/s/416481/
 
 ## icons & graphics
 * Zoom Out by Ben from NounProject.com
