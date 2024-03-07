@@ -51,8 +51,15 @@ The following cities have our one-tap 311 reporting enabled, and we have collect
 </div>
 
 <div class="flex-item">
+  <a href="/maps/boston/">
+    <h1 class="flex-link">Boston, Massachusetts</h1>
+    <img alt="Photo of Boston" src="/assets/map-boston.jpg" width="400px">
+  </a>
+</div>
+
+<div class="flex-item">
   <a href="/maps/dc/">
-    <h1 class="flex-link">Washington, DC</h1>
+    <h1 class="flex-link">Washington, D.C.</h1>
     <img alt="Photo of a DC capitol" src="/assets/map-dc.jpg" width="400px">
   </a>
 </div>

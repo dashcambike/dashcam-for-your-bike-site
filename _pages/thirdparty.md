@@ -122,6 +122,7 @@ zoom woosh sound by https://freesound.org/s/416481/
 * watermark by Mudayana from [Noun Project](https://thenounproject.com/browse/icons/term/watermark/) (CC BY 3.0)
 * vibration by Astonish from [Noun Project](https://thenounproject.com/browse/icons/term/vibration/) (CC BY 3.0)
 * picture in picture by Ria Fitriana from [Noun Project](https://thenounproject.com/browse/icons/term/picture-in-picture/) (CC BY 3.0)
+* copy to clipboard by Melvin Salas from [Noun Project](https://thenounproject.com/browse/icons/term/copy-to-clipboard/) (CC BY 3.0)
 
 
 ## nice vibrations

@@ -3,7 +3,7 @@
 Change to point to the Staging URL if needed.
 CDN helps JSONs load faster, automatically resizes images to reduce bandwidth, and costs less than hitting firebase endpoints.
 Note: these caches will not refresh with a browser hard refresh; if you update the geojson and need to see
-those updates reflected live, use incognito or change currentUTCHourForCacheControl in the URL
+those updates reflected live, use incognito or change the GET params of the geojson
 */
 //const cdnUrl = "https://dashcamstaging.b-cdn.net/o/";
 const cdnUrl = "https://dashcamprod.b-cdn.net/o/";
@@ -144,25 +144,38 @@ function makeDateString(unixTimestamp) {
     return `${day}, ${month} ${date.getDate()}, ${date.getFullYear()} at ${hours}:${minutes} ${ampm}`;
 }
 
+function getURL(featureProperties)
+{
+    if (featureProperties.CityGovURL != undefined)
+    {
+        return featureProperties.CityGovURL;
+    }
+    if (featureProperties.TweetURL != undefined)
+    {
+        return featureProperties.TweetURL;
+    }
+    return "https://twitter.com/dashcam311";
+}
+
 function getDescriptionFor(featureProperties) {
     const filepath = featureProperties.ImageOrVideoFilepath;
-    const url = cdnUrl + filepath + "?alt=media&width=400";
+    const mediaURL = cdnUrl + filepath + "?alt=media&width=400";
     const hazardName = featureProperties.HazardName;
-    const tweetURL = featureProperties.TweetURL != undefined ? featureProperties.TweetURL : "https://twitter.com/dashcam311";
+    const externalURL = getURL(featureProperties);
     const address = featureProperties.ApproxAddress != undefined ? featureProperties.ApproxAddress : "";
     const dateStr = makeDateString(featureProperties.Timestamp);
 
 
     let popupBody = "<div class=\"popup-body\">";
-    popupBody += `<p class="popup-title"><a href="${tweetURL}" target="_blank">${hazardName}</a></p>`;
+    popupBody += `<p class="popup-title"><a href="${externalURL}" target="_blank">${hazardName}</a></p>`;
     popupBody += `<p>${address}<br/>On ${dateStr}</p>`;
     if (filepath.endsWith(".mp4"))
     {
-        popupBody += `<p><video width="100%" controls autoplay><source src="${url}" type="video/mp4"></video></p>`;
+        popupBody += `<p><video width="100%" controls autoplay><source src="${mediaURL}" type="video/mp4"></video></p>`;
     }
     else if (filepath.endsWith(".png") || filepath.endsWith(".jpg"))
     {
-        popupBody += `<p><a href="${tweetURL}" target="_blank"><img class="image-loading" src="${url}" width="100%" onload="fixPopupPositionAfterLoad()"/></a></p>`;
+        popupBody += `<p><a href="${externalURL}" target="_blank"><img class="image-loading" src="${mediaURL}" width="100%" onload="fixPopupPositionAfterLoad()"/></a></p>`;
     }
     else
     {
@@ -384,10 +397,6 @@ function buildMap() {
     const geojsonPath = urlParams.get('geojson')
     const centerlat = urlParams.get('centerlat')
     const centerlon = urlParams.get('centerlon')
-
-    // A terribly hacky way of caching for at most one hour (while images cache for 7 days)
-    const date = new Date();
-    const currentUTCHourForCacheControl = date.getDate() + "-" + date.getUTCHours();
 
     const map = new mapboxgl.Map({
         container: 'map',
