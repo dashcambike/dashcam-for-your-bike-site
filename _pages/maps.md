@@ -39,7 +39,7 @@ order: 3
 
 The following cities have our one-tap 311 reporting enabled, and we have collected all reports submitted through the dashcam.bike app into an interactive map.
 
-[Learn how to bring 311 reporting to your city here](311).
+[Learn how to bring 311 reporting to your city here](/311).
 
 <div class="flex-wrapper">
 
